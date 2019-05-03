@@ -24,7 +24,7 @@ embedded_instances {
   id: "gameHandler"
   data: "components {\n"
   "  id: \"main\"\n"
-  "  component: \"/Scripts/Main.script\"\n"
+  "  component: \"/scripts/Main.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"

@@ -1,5 +1,5 @@
 images {
-  image: "/Assets/Temp/note_test.png"
+  image: "/assets/Temp/note_test.png"
 }
 margin: 0
 extrude_borders: 0

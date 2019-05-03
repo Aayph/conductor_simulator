@@ -48,7 +48,7 @@ function readMusic(self, song)
 			if values[1] == "On" then
 				self.notes[self.noteCount] = {}
 				self.notes[self.noteCount][0] = tonumber(values[0])
-				self.notes[self.noteCount][1] = (tonumber(string.sub(values[3], 3)) - minPitch) / maxPitch
+				self.notes[self.noteCount][1] = (tonumber(string.sub(values[3], 3)) - minPitch) / (maxPitch - minPitch)
 				self.notes[self.noteCount][2] = (tonumber(string.sub(values[4], 3))) / maxVelocity
 				self.noteCount = self.noteCount + 1
 			end
