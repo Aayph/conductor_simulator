@@ -9,3 +9,5 @@ note_end_y = 0.9
 
 
 notes = {}
+
+batontip = nil
