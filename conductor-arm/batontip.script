@@ -1,0 +1,5 @@
+require "data.gamedata"
+
+function init(self)
+	batontip = go.get_id()
+end

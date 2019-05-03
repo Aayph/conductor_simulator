@@ -32,6 +32,7 @@ function update(self, dt)
 	go.set_rotation(vmath.quat_rotation_z(self.wobbelPosition * self.wobbelPositionToAngleFactor))
 
 	self.wobbelVelocity = self.wobbelVelocity - ((self.wobbelPosition * self.force) + (self.wobbelVelocity * self.damping)) * dt
+	--self.wobbelVelocity = math.min(10, math.max(-10, self.wobbelVelocity))
 	
 	--msg.post("@render:", "draw_text", { text = "X", position = currentWorldPos })
 	--msg.post("@render:", "draw_line", { start_point = currentWorldPos, end_point = currentWorldPos + vmath.rotate(go.get_world_rotation(), self.velocityNormal) * 200, color = vmath.vector4(1, 0, 0, 1) })
