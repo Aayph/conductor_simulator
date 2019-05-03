@@ -5,9 +5,12 @@ main_collection = /main/main.collectionc
 shared_state = 1
 
 [display]
-width = 960
-height = 640
+width = 540
+height = 960
+fullscreen = 0
 
 [project]
 title = conductor_simulator
+write_log = 0
+dependencies = 
 

@@ -1,0 +1,3 @@
+function init(self)
+	msg.post("/level01/noteSpawner#NoteSpawner", "init_music", {0})
+end
