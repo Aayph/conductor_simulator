@@ -1,0 +1,11 @@
+require "data.gamedata"
+
+go.property("song_id", 0)
+go.property("song_name", hash("default"))
+go.property("song_length", 0) --seconds
+go.property("note_time", 10)
+
+function init(self)
+	traveltime = go.get("#level", "note_time")
+	msg.post("noteSpawner", "init_music", {songid = go.get("#level", "song_id")})
+end

@@ -1,7 +1,8 @@
 require "data.gamedata"
 
 function init(self)
-	msg.post("/level01/noteSpawner#NoteSpawner", "init_music", {songid = 0})
+	--msg.post("/level01/noteSpawner#NoteSpawner", "init_music", {songid = 0})
+	
 end
 
 function startSong()
@@ -10,4 +11,11 @@ end
 
 function update(self, dt)
 	
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("start_level") then
+		self.level = collectionfactory.create("/level#" .. message["levelid"])
+		msg.post("/floete/go", "disable")
+	end
 end

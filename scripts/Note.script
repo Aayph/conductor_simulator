@@ -9,7 +9,7 @@ function init(self)
 	self.progress = 0
 	self.jiggl = math.random(0, 360)
 
-	self.base_x = (1/7) + go.get("#Note", "pitch") * (5/7)
+	self.base_x = (1/6) + go.get("#Note", "pitch") * (4/6)
 	update_position(self)
 end
 
@@ -35,7 +35,7 @@ function update_position(self)
 end
 
 function calculate_x(self)
-	return self.base_x + go.get("#Note", "velocity") * get_jiggle(self) * (1/7)
+	return self.base_x + go.get("#Note", "velocity") * get_jiggle(self) * (1/6)
 end
 
 function get_jiggle(self)
@@ -44,6 +44,6 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("trigger") then
-		print(go.get_id())
+		go.delete()
 	end
 end

@@ -11,8 +11,8 @@ background_color {
 }
 nodes {
   position {
-    x: 549.0
-    y: 576.0
+    x: 270.0
+    y: 500.0
     z: 0.0
     w: 1.0
   }
@@ -136,7 +136,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Play"
+  text: "Title 01"
   font: "font_goudy"
   id: "button_start/text"
   xanchor: XANCHOR_NONE
@@ -169,8 +169,8 @@ nodes {
 }
 nodes {
   position {
-    x: 575.0
-    y: 1292.0
+    x: 270.0
+    y: 800.0
     z: 0.0
     w: 1.0
   }
@@ -187,8 +187,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 200.0
-    y: 100.0
+    x: 150.0
+    y: 50.0
     z: 0.0
     w: 1.0
   }
