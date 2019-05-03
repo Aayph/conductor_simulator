@@ -1,0 +1,85 @@
+name: "default"
+instances {
+  id: "upper-arm.go"
+  prototype: "/conductor-arm/upper-arm.go.go"
+  children: "lower-arm"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -0.36618882
+    w: 0.93054056
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "lower-arm"
+  prototype: "/conductor-arm/lower-arm.go"
+  children: "hand"
+  position {
+    x: 0.0
+    y: 155.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -0.2614183
+    w: 0.9652256
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hand"
+  prototype: "/conductor-arm/hand.go"
+  children: "baton"
+  position {
+    x: 0.0
+    y: 160.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -0.3425781
+    w: 0.93948936
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "baton"
+  prototype: "/conductor-arm/baton.go"
+  position {
+    x: 0.0
+    y: 75.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -0.37000796
+    w: 0.9290286
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+scale_along_z: 0

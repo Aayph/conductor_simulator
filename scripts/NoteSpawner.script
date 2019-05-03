@@ -1,0 +1,58 @@
+require "data.music"
+
+
+function init(self)
+	self.time = 0
+	self.play = 0
+	self.notes = {}
+	self.noteCount = 0
+	self.notePosition = 0
+end
+
+function update(self, dt)
+	if self.play == 1 then
+		self.time = self.time + dt * 1000
+		while (self.notes[self.notePosition][0] <= self.time) do
+			factory.create("#notefactory", nil, nil, {noteid = self.notePosition, pitch = self.notes[self.notePosition][1], velocity = self.notes[self.notePosition][2]})
+			self.notePosition = self.notePosition + 1
+		end
+		if (self.notePosition == self.noteCount - 1) then
+			self.play = 0
+		end
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("init_music") then
+		readMusic(self, songs[message["songid"]])
+		self.time = 0
+	elseif message_id == hash("start_game") then
+		self.play = 1
+	elseif message_id == hash("stop_game") then
+		self.play = 0
+	end
+end
+
+
+function readMusic(self, song)
+	self.noteCount = 0
+	self.notePosition = 0
+	for key,songpart in pairs(song) do
+		for note in string.gmatch(songpart, "[^,]+") do
+			local values = {}
+			local n = 0
+			for v in string.gmatch(note, "[^%s]+") do
+				values[n] = v
+				n = n + 1
+			end
+			if values[1] == "On" then
+				self.notes[self.noteCount] = {}
+				self.notes[self.noteCount][0] = tonumber(values[0])
+				self.notes[self.noteCount][1] = (tonumber(string.sub(values[3], 3)) - minPitch) / (maxPitch - minPitch)
+				self.notes[self.noteCount][2] = (tonumber(string.sub(values[4], 3))) / maxVelocity
+				self.noteCount = self.noteCount + 1
+			end
+		end
+	end
+	self.play = 1
+end

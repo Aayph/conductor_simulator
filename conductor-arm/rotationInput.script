@@ -1,0 +1,52 @@
+go.property("minAngle", -75)
+go.property("maxAngle", -10)
+go.property("accel", 350)
+
+function init(self)
+	-- Add initialization code here
+	-- Remove this function if not needed
+	msg.post(".", "acquire_input_focus")
+	self.currentMouseX = 0
+	self.currentMouseY = 0
+	self.currentlyPressed = false
+	self.pressedStartX = 0
+	self.pressedStartY = 0
+	self.currentTargetRotation = 0
+	self.currentRotation = 0
+	self.pressedStartRotation = 0
+end
+
+function update(self, dt)
+	if self.currentlyPressed then
+		self.currentTargetRotation = self.pressedStartRotation + (self.pressedStartX - self.currentMouseX)
+		self.currentTargetRotation = math.min(self.maxAngle, math.max(self.minAngle, self.currentTargetRotation))
+	end
+	if self.currentRotation < self.currentTargetRotation then
+		self.currentRotation = self.currentRotation + self.accel * dt
+		if self.currentRotation > self.currentTargetRotation then
+			self.currentRotation = self.currentTargetRotation
+		end
+	elseif self.currentRotation > self.currentTargetRotation then
+		self.currentRotation = self.currentRotation - self.accel * dt
+		if self.currentRotation < self.currentTargetRotation then
+			self.currentRottation = self.currentTargetRotation
+		end
+	end
+	go.set_rotation(vmath.quat_rotation_z(math.rad(self.currentRotation)))
+end
+
+function on_input(self, action_id, action)
+	if action_id == nil then
+		self.currentMouseX = action.x
+		self.currentMouseY = action.y
+	else
+		if action.pressed then 
+			self.currentlyPressed = true
+			self.pressedStartX = self.currentMouseX
+			self.pressedStartY = self.currentMouseY
+			self.pressedStartRotation = self.currentRotation
+		elseif action.released then
+			self.currentlyPressed = false
+		end
+	end
+end

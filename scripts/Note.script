@@ -1,0 +1,49 @@
+require "data.gamedata"
+
+go.property("noteid", 0)
+go.property("pitch", 0)
+go.property("velocity", 0)
+
+function init(self)
+	notes[go.get("#Note", "noteid")] = go.get_id()
+	self.progress = 0
+	self.jiggl = math.random(0, 360)
+
+	self.base_x = (1/7) + go.get("#Note", "pitch") * (5/7)
+	update_position(self)
+end
+
+function final(self)
+	table.remove(notes, go.get("#Note", "noteid"))
+end
+
+function update(self, dt)
+	self.progress = self.progress + dt / traveltime
+	if self.progress > 1 then
+		go.delete()
+	end
+	
+	self.jiggl = self.jiggl + (dt * note_jiggl_speed) * 360
+	if self.jiggl > 360 then
+		self.jiggl = self.jiggl - 360
+	end
+	update_position(self)
+end
+
+function update_position(self)
+	go.set_position(vmath.vector3(calculate_x(self) * screenwidth, vmath.lerp(self.progress, note_start_y, note_end_y) * screenheight, 0))
+end
+
+function calculate_x(self)
+	return self.base_x + go.get("#Note", "velocity") * get_jiggle(self) * (1/7)
+end
+
+function get_jiggle(self)
+	return math.sin(math.rad(self.jiggl))
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("trigger") then
+		print(go.get_id())
+	end
+end

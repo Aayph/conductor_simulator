@@ -1,0 +1,15 @@
+images {
+  image: "/assets/baton.png"
+}
+images {
+  image: "/assets/hand.png"
+}
+images {
+  image: "/assets/lower-arm.png"
+}
+images {
+  image: "/assets/upper-arm.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0

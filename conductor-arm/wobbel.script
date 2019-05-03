@@ -1,0 +1,55 @@
+go.property("sensorPosOffset", vmath.vector3(0, 10, 0))
+go.property("force", 120)
+go.property("damping", 0.2)
+go.property("maxAngle", 45)
+go.property("wobbelAmount", 0.001)
+
+function init(self)
+	self.t = 0
+	self.lastWorldPos = go.get_world_position() + vmath.rotate(go.get_world_rotation(), self.sensorPosOffset)
+	self.velocityNormal = vmath.vector3(1,0,0)
+	self.lastVelocity = 0
+	self.rotationZ = 0
+	self.wobbelVelocity = 0
+	self.wobbelPosition = 0
+	self.wobbelPositionToAngleFactor = math.rad(self.maxAngle)
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	local currentWorldPos = go.get_world_position() + vmath.rotate(go.get_world_rotation(), self.sensorPosOffset)
+	local worldMovement = currentWorldPos - self.lastWorldPos
+	local currentVelocity = vmath.dot(worldMovement, vmath.rotate(go.get_world_rotation(), self.velocityNormal)) / dt
+	local accel = (currentVelocity - self.lastVelocity) / dt
+	self.wobbelVelocity = self.wobbelVelocity + self.wobbelAmount * accel * dt
+	self.wobbelPosition = self.wobbelPosition + self.wobbelVelocity * dt
+	self.wobbelPosition = math.min(1, math.max(-1, self.wobbelPosition))
+	
+	go.set_rotation(vmath.quat_rotation_z(self.wobbelPosition * self.wobbelPositionToAngleFactor))
+
+	self.wobbelVelocity = self.wobbelVelocity - ((self.wobbelPosition * self.force) + (self.wobbelVelocity * self.damping)) * dt
+	
+	--msg.post("@render:", "draw_text", { text = "X", position = currentWorldPos })
+	--msg.post("@render:", "draw_line", { start_point = currentWorldPos, end_point = currentWorldPos + vmath.rotate(go.get_world_rotation(), self.velocityNormal) * 200, color = vmath.vector4(1, 0, 0, 1) })
+	self.lastWorldPos = currentWorldPos
+	self.lastVelocity = currentVelocity
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

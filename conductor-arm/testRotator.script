@@ -1,0 +1,11 @@
+function init(self)
+	-- Add initialization code here
+	-- Remove this function if not needed
+	self.t = 0
+	msg.post(".", "acquire_input_focus")
+end
+
+function update(self, dt)
+	self.t = self.t + dt
+	go.set_rotation(vmath.quat_rotation_z(math.cos(self.t)))
+end
