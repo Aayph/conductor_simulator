@@ -28,9 +28,6 @@ function update(self, dt)
 		self.jiggl = self.jiggl - 360
 	end
 	update_position(self)
-	if go.get("#Note", "noteid") == 10 then
-		print(go.get_position(notes[1]))
-	end
 end
 
 function update_position(self)
