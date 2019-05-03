@@ -1,0 +1,15 @@
+images {
+  image: "/assets/Berta_body@0.5x.png"
+}
+images {
+  image: "/assets/Berta_head@0.5x.png"
+}
+images {
+  image: "/assets/Victor_body@0.5x.png"
+}
+images {
+  image: "/assets/Victor_head@0.5x.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0
