@@ -43,6 +43,7 @@ function get_jiggle(self)
 end
 
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Remove this function if not needed
+	if message_id == hash("trigger") then
+		print(go.get_id())
+	end
 end
