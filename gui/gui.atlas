@@ -1,0 +1,9 @@
+images {
+  image: "/gui/speechbubble1.png"
+}
+images {
+  image: "/gui/speechbubble2.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0

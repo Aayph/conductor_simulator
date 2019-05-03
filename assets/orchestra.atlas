@@ -10,6 +10,12 @@ images {
 images {
   image: "/assets/Victor_head@0.5x.png"
 }
+images {
+  image: "/assets/gradient.png"
+}
+images {
+  image: "/assets/bg.png"
+}
 margin: 0
 extrude_borders: 0
 inner_padding: 0
