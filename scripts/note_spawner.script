@@ -12,9 +12,9 @@ end
 
 
 function update(self, dt)
+	level_age = level_age + dt
 	if self.play == 1 then
 		self.time = self.time + dt * 1000
-		level_age = level_age + dt
 		while (self.note_list[self.note_index][0] <= self.time) do
 			factory.create("#note_factory", nil, nil, {note_id = self.note_index, pitch = self.note_list[self.note_index][1], velocity = self.note_list[self.note_index][2]})
 			self.note_index = self.note_index + 1

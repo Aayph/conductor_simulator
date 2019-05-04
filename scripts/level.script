@@ -12,6 +12,7 @@ function init(self)
 	traveltime = self.note_time
 	level_time = self.song_length + self.note_time
 	note_jiggl_speed = self.jiggle_speed
+	msg.post("#music", "play_sound")
 	msg.post("note_spawner", "init_music", {songid = self.song_id})
 	self.isEnd = 0
 	msg.post(".", "acquire_input_focus")
