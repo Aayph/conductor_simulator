@@ -15,9 +15,14 @@ function init(self)
 	msg.post("note_spawner", "init_music", {songid = self.song_id})
 	self.isEnd = 0
 	msg.post(".", "acquire_input_focus")
+	self.music_on = 0
 end
 
 function update(self, dt)
+	if self.music_on == 0 and level_play == 1 then
+		self.music_on = 1
+		msg.post("#music", "play_sound", {delay = traveltime/6})
+	end
 	if level_age >= level_time and self.isEnd == 0 then
 		music_end(self)
 	end
@@ -33,6 +38,7 @@ function on_input(self, action_id, action)
 	if action_id ~= nil and self.isEnd == 1 then
 		if action.pressed then 
 			msg.post("/game_handler", "end_level")		
+			msg.post("/sound#sound_handler", "play_button")		
 		end
 	end
 end

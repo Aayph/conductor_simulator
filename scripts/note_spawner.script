@@ -3,24 +3,46 @@ require "data.gamedata"
 
 function init(self)
 	self.time = 0
-	self.play = 0
+	level_play = 0
 	self.note_list = {}
 	self.note_index = 0
+	self.next_noteID = 0
 	note_count = 0
+	self.nextBadNote = math.random(2,4)
 end
 
 
 
 function update(self, dt)
-	if self.play == 1 then
+	level_age = level_age + dt
+	if level_play == 1 then
 		self.time = self.time + dt * 1000
-		level_age = level_age + dt
 		while (self.note_list[self.note_index][0] <= self.time) do
-			factory.create("#note_factory", nil, nil, {note_id = self.note_index, pitch = self.note_list[self.note_index][1], velocity = self.note_list[self.note_index][2]})
+			factory.create("#note_factory", nil, nil, {
+				note_id = self.next_noteID,
+				pitch = self.note_list[self.note_index][1],
+				velocity = self.note_list[self.note_index][2],
+				goodnote = true},
+				vmath.vector3(0.5)) --> (scale)
 			self.note_index = self.note_index + 1
+			self.next_noteID = self.next_noteID + 1
 		end
-		if (self.note_index == note_count - 1) then
-			self.play = 0
+
+		self.nextBadNote = self.nextBadNote - dt
+		if self.nextBadNote <= 0 then
+			factory.create("#note_factory", nil, nil, {
+				note_id = self.next_noteID,
+				pitch = math.random(),
+				velocity = 0,
+				goodnote = false},
+				vmath.vector3(0.5)) --> (scale)
+			self.next_noteID = self.next_noteID + 1
+			note_count = note_count + 1
+			self.nextBadNote = math.random(2,4)
+		end
+		
+		if (self.next_noteID == note_count - 1) then
+			level_play = 0
 		end
 	end
 end
@@ -30,15 +52,15 @@ function on_message(self, message_id, message, sender)
 		readMusic(self, songs[message["songid"]])
 		self.time = 0
 	elseif message_id == hash("start_game") then
-		self.play = 1
+		level_play = 1
 	elseif message_id == hash("stop_game") then
-		self.play = 0
+		level_play = 0
 	end
 end
 
 
 function readMusic(self, song)
-	self.note_count = 0
+	note_count = 0
 	self.note_index = 0
 	for key,songpart in pairs(song) do
 		for note in string.gmatch(songpart, "[^;]+") do
@@ -56,5 +78,5 @@ function readMusic(self, song)
 		end
 	end
 	notes_done = 0
-	self.play = 1
+	level_play = 1
 end

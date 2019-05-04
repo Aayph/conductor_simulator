@@ -3,6 +3,7 @@ require "data.gamedata"
 go.property("note_id", 0)
 go.property("pitch", 0)
 go.property("velocity", 0)
+go.property("goodnote", true)
 
 function init(self)
 	notes[self.note_id] = go.get_id()
@@ -11,6 +12,16 @@ function init(self)
 
 	self.base_x = (1/6) + self.pitch * (4/6)
 	update_position(self)
+
+	if self.goodnote then
+		msg.post("#note", "play_animation", {id = hash("note1_good")})
+		msg.post("#noteBG", "play_animation", {id = hash("bubble_good")})
+		self.speed = 1.0 / traveltime
+	else
+		msg.post("#note", "play_animation", {id = hash("note1_bad")})
+		msg.post("#noteBG", "play_animation", {id = hash("bubble_bad")})
+		self.speed = 1.0 / (traveltime * 1.5)
+	end
 end
 
 function final(self)
@@ -19,8 +30,11 @@ function final(self)
 end
 
 function update(self, dt)
-	self.progress = self.progress + dt / traveltime
+	self.progress = self.progress + dt * self.speed
 	if self.progress > 1 then
+		if not self.goodnote then
+			msg.post("/sound#sound_handler", "play_bad_note", { pitch = self.pitch })
+		end
 		go.delete()
 	end
 	
@@ -46,6 +60,8 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("trigger") then
+		msg.post("/sound#sound_handler", "play_pop_sound")
+		factory.create("#explosionFactory", go.get_world_position(), nil, {}, vmath.vector3(0.8))
 		go.delete()
 	end
 end

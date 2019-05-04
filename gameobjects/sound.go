@@ -12,6 +12,21 @@ components {
     z: 0.0
     w: 1.0
   }
+  properties {
+    id: "bad_note"
+    value: "0.6"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
+    id: "gui"
+    value: "1.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
+    id: "music"
+    value: "1.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
 }
 embedded_components {
   id: "bad_note_1_1"
@@ -359,6 +374,26 @@ embedded_components {
   data: "sound: \"/assets/Audio/Plop Sounds/plop_4.ogg\"\n"
   "looping: 0\n"
   "group: \"Plops\"\n"
+  "gain: 1.0\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "maintheme"
+  type: "sound"
+  data: "sound: \"/assets/Audio/mainmenu_music.ogg\"\n"
+  "looping: 1\n"
+  "group: \"music\"\n"
   "gain: 1.0\n"
   ""
   position {

@@ -1,15 +1,42 @@
+go.property("bad_note", 0.8)
+go.property("gui", 0.8)
+go.property("States", 0.8)
+go.property("music", 0.8)
+go.property("Plops", 0.8)
+
+function init(self)
+	sound.set_group_gain("bad_note", self.bad_note)
+	sound.set_group_gain("UI", self.gui)
+	sound.set_group_gain("States", self.States)
+	sound.set_group_gain("music", self.music)
+	sound.set_group_gain("Plops", self.Plops)
+end
+
 function on_message(self, message_id, message, sender)
 	if message_id == hash("play_levelend") then
 		--message[rating]
 		msg.post("#Endstate", "play_sound")
 	elseif message_id == hash("play_bad_note") then
 		rand = math.random(1, 3)
-		pitch = math.floor(message[pitch] * 6 - 1)
+		pitch = math.floor(message["pitch"] * 6 - 1)
 		if pitch < 1 then
 			pitch = 1
 		elseif pitch > 4 then
 			pitch = 4
 		end
 		msg.post("#bad_note_"..pitch.."_"..rand, "play_sound")
+
+	elseif message_id == hash("play_pop_sound") then
+		rand = math.random(1, 4)
+		msg.post("#plop_"..rand, "play_sound")
+
+	elseif message_id == hash("play_button") then
+		msg.post("#Button", "play_sound")
+		
+	elseif message_id == hash("play_main") then
+		msg.post("#maintheme", "play_sound")
+		
+	elseif message_id == hash("stop_main") then
+		msg.post("#maintheme", "stop_sound")
 	end
 end
