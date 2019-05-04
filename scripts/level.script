@@ -6,6 +6,11 @@ go.property("song_length", 0) --seconds
 go.property("note_time", 10)
 go.property("jiggle_speed", 0.4)
 
+go.property("note_value_increase", 1)
+go.property("note_value_decrease", 1)
+go.property("note_bad_decrease", 1)
+
+
 function init(self)
 	level_age = 0
 	msg.post("level_gui", "disable")
@@ -16,6 +21,7 @@ function init(self)
 	self.isEnd = 0
 	msg.post(".", "acquire_input_focus")
 	self.music_on = 0
+	note_value = 1
 end
 
 function update(self, dt)
