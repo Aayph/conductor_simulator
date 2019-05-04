@@ -1,22 +1,21 @@
 require "data.music"
 
-
 function init(self)
 	self.time = 0
 	self.play = 0
-	self.notes = {}
-	self.noteCount = 0
-	self.notePosition = 0
+	self.note_list = {}
+	self.note_count = 0
+	self.note_index = 0
 end
 
 function update(self, dt)
 	if self.play == 1 then
 		self.time = self.time + dt * 1000
-		while (self.notes[self.notePosition][0] <= self.time) do
-			factory.create("#notefactory", nil, nil, {noteid = self.notePosition, pitch = self.notes[self.notePosition][1], velocity = self.notes[self.notePosition][2]})
-			self.notePosition = self.notePosition + 1
+		while (self.note_list[self.note_index][0] <= self.time) do
+			factory.create("#note_factory", nil, nil, {note_id = self.note_index, pitch = self.note_list[self.note_index][1], velocity = self.note_list[self.note_index][2]})
+			self.note_index = self.note_index + 1
 		end
-		if (self.notePosition == self.noteCount - 1) then
+		if (self.note_index == self.note_count - 1) then
 			self.play = 0
 		end
 	end
@@ -35,8 +34,8 @@ end
 
 
 function readMusic(self, song)
-	self.noteCount = 0
-	self.notePosition = 0
+	self.note_count = 0
+	self.note_index = 0
 	for key,songpart in pairs(song) do
 		for note in string.gmatch(songpart, "[^,]+") do
 			local values = {}
@@ -46,11 +45,11 @@ function readMusic(self, song)
 				n = n + 1
 			end
 			if values[1] == "On" then
-				self.notes[self.noteCount] = {}
-				self.notes[self.noteCount][0] = tonumber(values[0])
-				self.notes[self.noteCount][1] = (tonumber(string.sub(values[3], 3)) - minPitch) / (maxPitch - minPitch)
-				self.notes[self.noteCount][2] = (tonumber(string.sub(values[4], 3))) / maxVelocity
-				self.noteCount = self.noteCount + 1
+				self.note_list[self.note_count] = {}
+				self.note_list[self.note_count][0] = tonumber(values[0])
+				self.note_list[self.note_count][1] = (tonumber(string.sub(values[3], 3)) - minPitch) / (maxPitch - minPitch)
+				self.note_list[self.note_count][2] = (tonumber(string.sub(values[4], 3))) / maxVelocity
+				self.note_count = self.note_count + 1
 			end
 		end
 	end

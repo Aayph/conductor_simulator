@@ -12,14 +12,16 @@ end
 
 function update(self, dt)
 	local tipWorldPos = go.get_world_position(batontip)
-	for _,note in ipairs(notes) do
+	i = 0
+	for _,note in pairs(notes) do
 		if note ~= nil then
 			local noteWorldPos = go.get_world_position(note)
 			local distSqr = vmath.length_sqr(tipWorldPos - noteWorldPos)
 			if distSqr < 50 * 50 then
-				print(math.sqrt(distSqr))
+				msg.post(note, "trigger")
 			end
 		end
+		i = i + 1
 	end
 end
 

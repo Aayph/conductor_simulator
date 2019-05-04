@@ -1,7 +1,27 @@
 name: "default"
 instances {
-  id: "noteSpawner"
-  prototype: "/gameobjects/noteSpawner.go"
+  id: "note_spawner"
+  prototype: "/gameobjects/note_spawner.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "note_destroyer"
+  prototype: "/gameobjects/note_destroyer.go"
   position {
     x: 0.0
     y: 0.0
@@ -35,6 +55,16 @@ embedded_instances {
   "    y: 0.0\n"
   "    z: 0.0\n"
   "    w: 1.0\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"note_time\"\n"
+  "    value: \"4.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"jiggle_speed\"\n"
+  "    value: \"0.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "}\n"
   ""

@@ -1,20 +1,18 @@
-require "data.gamedata"
-
-go.property("noteid", 0)
+go.property("note_id", 0)
 go.property("pitch", 0)
 go.property("velocity", 0)
 
 function init(self)
-	notes[self.noteid] = go.get_id()
+	notes[self.note_id] = go.get_id()
 	self.progress = 0
 	self.jiggl = math.random(0, 360)
 
-	self.base_x = (1/6) + go.get("#Note", "pitch") * (4/6)
+	self.base_x = (1/6) + self.pitch * (4/6)
 	update_position(self)
 end
 
 function final(self)
-	notes[self.noteid] = nil
+	notes[self.note_id] = nil
 end
 
 function update(self, dt)
@@ -31,11 +29,12 @@ function update(self, dt)
 end
 
 function update_position(self)
+	
 	go.set_position(vmath.vector3(calculate_x(self) * screenwidth, vmath.lerp(self.progress, note_start_y, note_end_y) * screenheight, 0))
 end
 
 function calculate_x(self)
-	return self.base_x + go.get("#Note", "velocity") * get_jiggle(self) * (1/6)
+	return self.base_x + self.velocity * get_jiggle(self) * (1/6)
 end
 
 function get_jiggle(self)

@@ -15,7 +15,9 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("start_level") then
-		self.level = collectionfactory.create("/level#" .. message["levelid"])
 		msg.post("/floete/go", "disable")
+		self.orchestra_collection = collectionfactory.create("#orchestra_factory")
+		self.level = collectionfactory.create("/level#" .. message["levelid"])
+		self.arm_collection = collectionfactory.create("#arm_factory")
 	end
 end
