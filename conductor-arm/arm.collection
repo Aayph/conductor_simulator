@@ -1,12 +1,12 @@
 name: "default"
 instances {
-  id: "upper-arm.go"
-  prototype: "/conductor-arm/upper-arm.go.go"
-  children: "lower-arm"
+  id: "arm1"
+  prototype: "/conductor-arm/arm1.go"
+  children: "arm2"
   position {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: -0.5
   }
   rotation {
     x: 0.0
@@ -21,13 +21,13 @@ instances {
   }
 }
 instances {
-  id: "lower-arm"
-  prototype: "/conductor-arm/lower-arm.go"
-  children: "hand"
+  id: "arm2"
+  prototype: "/conductor-arm/arm2.go"
+  children: "arm3"
   position {
     x: 0.0
-    y: 155.0
-    z: 0.0
+    y: 216.0
+    z: 0.1
   }
   rotation {
     x: 0.0
@@ -39,17 +39,95 @@ instances {
     id: "arm-part"
     properties {
       id: "force"
-      value: "60.0"
+      value: "50.0"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
       id: "damping"
-      value: "1.0"
+      value: "4.0"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
       id: "wobbelAmount"
-      value: "1.0E-4"
+      value: "0.002"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arm3"
+  prototype: "/conductor-arm/arm3.go"
+  children: "arm4"
+  position {
+    x: 0.0
+    y: 227.0
+    z: 0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "arm-part"
+    properties {
+      id: "force"
+      value: "50.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "damping"
+      value: "4.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "wobbelAmount"
+      value: "0.002"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arm4"
+  prototype: "/conductor-arm/arm4.go"
+  children: "hand"
+  position {
+    x: 0.0
+    y: 241.0
+    z: 0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "arm-part"
+    properties {
+      id: "force"
+      value: "50.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "damping"
+      value: "4.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "wobbelAmount"
+      value: "0.002"
       type: PROPERTY_TYPE_NUMBER
     }
   }
@@ -65,8 +143,8 @@ instances {
   children: "baton"
   position {
     x: 0.0
-    y: 160.0
-    z: 0.0
+    y: 244.0
+    z: -0.1
   }
   rotation {
     x: 0.0
@@ -83,12 +161,12 @@ instances {
     }
     properties {
       id: "damping"
-      value: "1.0"
+      value: "4.0"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
       id: "wobbelAmount"
-      value: "0.001"
+      value: "0.002"
       type: PROPERTY_TYPE_NUMBER
     }
   }
@@ -103,9 +181,9 @@ instances {
   prototype: "/conductor-arm/baton.go"
   children: "batontip"
   position {
-    x: 0.0
-    y: 75.0
-    z: 0.0
+    x: -68.0
+    y: 146.0
+    z: -0.1
   }
   rotation {
     x: 0.0
@@ -117,12 +195,17 @@ instances {
     id: "wobbel"
     properties {
       id: "force"
-      value: "50.0"
+      value: "25.0"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
       id: "damping"
       value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "wobbelAmount"
+      value: "0.002"
       type: PROPERTY_TYPE_NUMBER
     }
   }
@@ -133,6 +216,27 @@ instances {
   }
 }
 scale_along_z: 0
+embedded_instances {
+  id: "go"
+  children: "arm1"
+  data: ""
+  position {
+    x: 756.0
+    y: -43.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.672
+    y: 0.672
+    z: 0.672
+  }
+}
 embedded_instances {
   id: "batontip"
   data: "components {\n"
@@ -152,8 +256,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
-    y: 149.0
+    x: -140.0
+    y: 236.0
     z: 0.0
   }
   rotation {

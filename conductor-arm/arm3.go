@@ -14,7 +14,7 @@ components {
   }
   properties {
     id: "sensorPosOffset"
-    value: "0.0, 190.0, 0.0"
+    value: "0.0, 250.0, 0.0"
     type: PROPERTY_TYPE_VECTOR3
   }
   properties {
@@ -32,19 +32,19 @@ embedded_components {
   id: "sprite"
   type: "sprite"
   data: "tile_set: \"/assets/arm.atlas\"\n"
-  "default_animation: \"lower-arm\"\n"
+  "default_animation: \"arm3\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
     x: 0.0
-    y: 77.0
-    z: 1.0
+    y: 135.0
+    z: 0.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.70710677
-    w: 0.70710677
+    z: 0.0
+    w: 1.0
   }
 }
