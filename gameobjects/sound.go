@@ -16,7 +16,7 @@ components {
 embedded_components {
   id: "bad_note_1_1"
   type: "sound"
-  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_1_1.wav\"\n"
+  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_1_1.ogg\"\n"
   "looping: 0\n"
   "group: \"bad_note\"\n"
   "gain: 1.0\n"
@@ -36,7 +36,7 @@ embedded_components {
 embedded_components {
   id: "bad_note_1_2"
   type: "sound"
-  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_1_2.wav\"\n"
+  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_1_2.ogg\"\n"
   "looping: 0\n"
   "group: \"bad_note\"\n"
   "gain: 1.0\n"
@@ -56,7 +56,7 @@ embedded_components {
 embedded_components {
   id: "bad_note_1_3"
   type: "sound"
-  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_1_3.wav\"\n"
+  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_1_3.ogg\"\n"
   "looping: 0\n"
   "group: \"bad_note\"\n"
   "gain: 1.0\n"
@@ -76,7 +76,7 @@ embedded_components {
 embedded_components {
   id: "bad_note_2_1"
   type: "sound"
-  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_2_1.wav\"\n"
+  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_2_1.ogg\"\n"
   "looping: 0\n"
   "group: \"bad_note\"\n"
   "gain: 1.0\n"
@@ -96,7 +96,7 @@ embedded_components {
 embedded_components {
   id: "bad_note_2_2"
   type: "sound"
-  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_2_2.wav\"\n"
+  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_2_2.ogg\"\n"
   "looping: 0\n"
   "group: \"bad_note\"\n"
   "gain: 1.0\n"
@@ -116,7 +116,7 @@ embedded_components {
 embedded_components {
   id: "bad_note_2_3"
   type: "sound"
-  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_2_3.wav\"\n"
+  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_2_3.ogg\"\n"
   "looping: 0\n"
   "group: \"bad_note\"\n"
   "gain: 1.0\n"
@@ -136,7 +136,7 @@ embedded_components {
 embedded_components {
   id: "bad_note_3_1"
   type: "sound"
-  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_3_1.wav\"\n"
+  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_3_1.ogg\"\n"
   "looping: 0\n"
   "group: \"bad_note\"\n"
   "gain: 1.0\n"
@@ -156,7 +156,7 @@ embedded_components {
 embedded_components {
   id: "bad_note_3_2"
   type: "sound"
-  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_3_2.wav\"\n"
+  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_3_2.ogg\"\n"
   "looping: 0\n"
   "group: \"bad_note\"\n"
   "gain: 1.0\n"
@@ -176,7 +176,7 @@ embedded_components {
 embedded_components {
   id: "bad_note_3_3"
   type: "sound"
-  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_3_3.wav\"\n"
+  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_3_3.ogg\"\n"
   "looping: 0\n"
   "group: \"bad_note\"\n"
   "gain: 1.0\n"
@@ -196,7 +196,7 @@ embedded_components {
 embedded_components {
   id: "bad_note_4_1"
   type: "sound"
-  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_4_1.wav\"\n"
+  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_4_1.ogg\"\n"
   "looping: 0\n"
   "group: \"bad_note\"\n"
   "gain: 1.0\n"
@@ -216,7 +216,7 @@ embedded_components {
 embedded_components {
   id: "bad_note_4_2"
   type: "sound"
-  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_4_2.wav\"\n"
+  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_4_2.ogg\"\n"
   "looping: 0\n"
   "group: \"bad_note\"\n"
   "gain: 1.0\n"
@@ -236,7 +236,7 @@ embedded_components {
 embedded_components {
   id: "bad_note_4_3"
   type: "sound"
-  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_4_3.wav\"\n"
+  data: "sound: \"/assets/Audio/Violin Noise/vln_noise_4_3.ogg\"\n"
   "looping: 0\n"
   "group: \"bad_note\"\n"
   "gain: 1.0\n"
@@ -256,7 +256,7 @@ embedded_components {
 embedded_components {
   id: "Button"
   type: "sound"
-  data: "sound: \"/assets/Audio/button.wav\"\n"
+  data: "sound: \"/assets/Audio/button.ogg\"\n"
   "looping: 0\n"
   "group: \"UI\"\n"
   "gain: 1.0\n"
@@ -276,7 +276,7 @@ embedded_components {
 embedded_components {
   id: "Endstate"
   type: "sound"
-  data: "sound: \"/assets/Audio/endstate_1.wav\"\n"
+  data: "sound: \"/assets/Audio/endstate_1.ogg\"\n"
   "looping: 0\n"
   "group: \"States\"\n"
   "gain: 1.0\n"
@@ -296,7 +296,7 @@ embedded_components {
 embedded_components {
   id: "plop_1"
   type: "sound"
-  data: "sound: \"/assets/Audio/Plop Sounds/plop_1.wav\"\n"
+  data: "sound: \"/assets/Audio/Plop Sounds/plop_1.ogg\"\n"
   "looping: 0\n"
   "group: \"Plops\"\n"
   "gain: 1.0\n"
@@ -316,7 +316,7 @@ embedded_components {
 embedded_components {
   id: "plop_2"
   type: "sound"
-  data: "sound: \"/assets/Audio/Plop Sounds/plop_2.wav\"\n"
+  data: "sound: \"/assets/Audio/Plop Sounds/plop_2.ogg\"\n"
   "looping: 0\n"
   "group: \"Plops\"\n"
   "gain: 1.0\n"
@@ -336,7 +336,7 @@ embedded_components {
 embedded_components {
   id: "plop_3"
   type: "sound"
-  data: "sound: \"/assets/Audio/Plop Sounds/plop_3.wav\"\n"
+  data: "sound: \"/assets/Audio/Plop Sounds/plop_3.ogg\"\n"
   "looping: 0\n"
   "group: \"Plops\"\n"
   "gain: 1.0\n"
@@ -356,7 +356,7 @@ embedded_components {
 embedded_components {
   id: "plop_4"
   type: "sound"
-  data: "sound: \"/assets/Audio/Plop Sounds/plop_4.wav\"\n"
+  data: "sound: \"/assets/Audio/Plop Sounds/plop_4.ogg\"\n"
   "looping: 0\n"
   "group: \"Plops\"\n"
   "gain: 1.0\n"
