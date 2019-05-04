@@ -16,7 +16,7 @@ components {
 embedded_components {
   id: "note"
   type: "sprite"
-  data: "tile_set: \"/assets/Temp/notes.atlas\"\n"
+  data: "tile_set: \"/assets/notes/notes.atlas\"\n"
   "default_animation: \"note_test\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
