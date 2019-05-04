@@ -13,5 +13,7 @@ notes_done = 0
 level_age = 0
 level_time = 0
 
+level_play = 0
+
 notes = {}
 batontip = nil

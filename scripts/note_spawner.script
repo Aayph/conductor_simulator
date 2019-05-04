@@ -3,7 +3,7 @@ require "data.gamedata"
 
 function init(self)
 	self.time = 0
-	self.play = 0
+	level_play = 0
 	self.note_list = {}
 	self.note_index = 0
 	self.next_noteID = 0
@@ -15,7 +15,7 @@ end
 
 function update(self, dt)
 	level_age = level_age + dt
-	if self.play == 1 then
+	if level_play == 1 then
 		self.time = self.time + dt * 1000
 		while (self.note_list[self.note_index][0] <= self.time) do
 			factory.create("#note_factory", nil, nil, {
@@ -42,7 +42,7 @@ function update(self, dt)
 		end
 		
 		if (self.next_noteID == note_count - 1) then
-			self.play = 0
+			level_play = 0
 		end
 	end
 end
@@ -52,9 +52,9 @@ function on_message(self, message_id, message, sender)
 		readMusic(self, songs[message["songid"]])
 		self.time = 0
 	elseif message_id == hash("start_game") then
-		self.play = 1
+		level_play = 1
 	elseif message_id == hash("stop_game") then
-		self.play = 0
+		level_play = 0
 	end
 end
 
@@ -78,5 +78,5 @@ function readMusic(self, song)
 		end
 	end
 	notes_done = 0
-	self.play = 1
+	level_play = 1
 end
