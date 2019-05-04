@@ -14,7 +14,7 @@ components {
   }
   properties {
     id: "bad_note"
-    value: "0.4"
+    value: "0.3"
     type: PROPERTY_TYPE_NUMBER
   }
   properties {
@@ -294,7 +294,7 @@ embedded_components {
   data: "sound: \"/assets/Audio/endstate_1.ogg\"\n"
   "looping: 0\n"
   "group: \"States\"\n"
-  "gain: 1.0\n"
+  "gain: 0.8\n"
   ""
   position {
     x: 0.0
@@ -334,7 +334,7 @@ embedded_components {
   data: "sound: \"/assets/Audio/mainmenu_music.ogg\"\n"
   "looping: 1\n"
   "group: \"music\"\n"
-  "gain: 0.7\n"
+  "gain: 0.4\n"
   ""
   position {
     x: 0.0
