@@ -12,6 +12,21 @@ components {
     z: 0.0
     w: 1.0
   }
+  properties {
+    id: "bad_note"
+    value: "0.6"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
+    id: "gui"
+    value: "1.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
+    id: "music"
+    value: "1.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
 }
 embedded_components {
   id: "bad_note_1_1"

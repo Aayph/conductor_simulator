@@ -1,3 +1,17 @@
+go.property("bad_note", 0.8)
+go.property("gui", 0.8)
+go.property("States", 0.8)
+go.property("music", 0.8)
+go.property("Plops", 0.8)
+
+function init(self)
+	sound.set_group_gain("bad_note", self.bad_note)
+	sound.set_group_gain("UI", self.ui)
+	sound.set_group_gain("States", self.States)
+	sound.set_group_gain("music", self.music)
+	sound.set_group_gain("Plops", self.Plops)
+end
+
 function on_message(self, message_id, message, sender)
 	if message_id == hash("play_levelend") then
 		--message[rating]
