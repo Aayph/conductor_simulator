@@ -1,6 +1,6 @@
 font: "/gui/AveriaSerifLibre-Regular.ttf"
 material: "/builtins/fonts/font.material"
-size: 32
+size: 24
 antialias: 1
 alpha: 1.0
 outline_alpha: 0.0
@@ -9,7 +9,7 @@ shadow_alpha: 0.0
 shadow_blur: 0
 shadow_x: 0.0
 shadow_y: 0.0
-extra_characters: ""
+extra_characters: "\303\251\303\263\303\244\303\274\303\266"
 output_format: TYPE_BITMAP
 all_chars: false
 cache_width: 0
