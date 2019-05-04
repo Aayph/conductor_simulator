@@ -1,0 +1,11 @@
+go.property("song_id", 0)
+go.property("song_name", hash("default"))
+go.property("song_length", 0) --seconds
+go.property("note_time", 10)
+go.property("jiggle_speed", 0.4)
+
+function init(self)
+	traveltime = self.note_time
+	note_jiggl_speed = self.jiggle_speed
+	msg.post("note_spawner", "init_music", {songid = self.song_id})
+end

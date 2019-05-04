@@ -35,8 +35,8 @@ local function get_projection(self)
 end
 
 function init(self)
-	screenwidth = render.get_window_width()
-	screenheight = render.get_window_height()
+	screenwidth = render.get_width()
+	screenheight = render.get_height()
 	self.tile_pred = render.predicate({"tile"})
 	self.gui_pred = render.predicate({"gui"})
 	self.text_pred = render.predicate({"text"})

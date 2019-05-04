@@ -1,6 +1,6 @@
 components {
   id: "NoteSpawner"
-  component: "/scripts/NoteSpawner.script"
+  component: "/scripts/note_spawner.script"
   position {
     x: 0.0
     y: 0.0
@@ -14,9 +14,9 @@ components {
   }
 }
 embedded_components {
-  id: "notefactory"
+  id: "note_factory"
   type: "factory"
-  data: "prototype: \"/gameobjects/Note.go\"\n"
+  data: "prototype: \"/gameobjects/note.go\"\n"
   "load_dynamically: false\n"
   ""
   position {

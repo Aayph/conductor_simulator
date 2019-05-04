@@ -1,0 +1,41 @@
+require "data.gamedata"
+
+function init(self)
+	-- Add initialization code here
+	-- Remove this function if not needed
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	local tipWorldPos = go.get_world_position(batontip)
+	i = 0
+	for _,note in pairs(notes) do
+		if note ~= nil then
+			local noteWorldPos = go.get_world_position(note)
+			local distSqr = vmath.length_sqr(tipWorldPos - noteWorldPos)
+			if distSqr < 50 * 50 then
+				msg.post(note, "trigger")
+			end
+		end
+		i = i + 1
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end
