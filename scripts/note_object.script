@@ -60,10 +60,10 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("trigger") then
-		if (self.goodnote == 1) then
-			msg.post("/sound#sound_handler", "play_pop_sound", {"is_bad" = 0})
+		if self.goodnote then
+			msg.post("/sound#sound_handler", "play_pop_sound", {is_bad = 1})
 		else
-			msg.post("/sound#sound_handler", "play_pop_sound", {"is_bad" = 1})
+			msg.post("/sound#sound_handler", "play_pop_sound", {is_bad = 0})
 		end
 		factory.create("#explosionFactory", go.get_world_position(), nil, {}, vmath.vector3(0.8))
 		go.delete()

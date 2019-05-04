@@ -309,69 +309,9 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "plop_1"
-  type: "sound"
-  data: "sound: \"/assets/Audio/Plop Sounds/plop_1.ogg\"\n"
-  "looping: 0\n"
-  "group: \"Plops\"\n"
-  "gain: 1.0\n"
-  ""
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-}
-embedded_components {
-  id: "plop_3"
-  type: "sound"
-  data: "sound: \"/assets/Audio/Plop Sounds/plop_3.ogg\"\n"
-  "looping: 0\n"
-  "group: \"Plops\"\n"
-  "gain: 1.0\n"
-  ""
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-}
-embedded_components {
   id: "plop_0_1"
   type: "sound"
   data: "sound: \"/assets/Audio/Plop Sounds/plop_good_1.ogg\"\n"
-  "looping: 0\n"
-  "group: \"Plops\"\n"
-  "gain: 1.0\n"
-  ""
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-}
-embedded_components {
-  id: "plop_4"
-  type: "sound"
-  data: "sound: \"/assets/Audio/Plop Sounds/plop_4.ogg\"\n"
   "looping: 0\n"
   "group: \"Plops\"\n"
   "gain: 1.0\n"
@@ -394,26 +334,6 @@ embedded_components {
   data: "sound: \"/assets/Audio/mainmenu_music.ogg\"\n"
   "looping: 1\n"
   "group: \"music\"\n"
-  "gain: 1.0\n"
-  ""
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-}
-embedded_components {
-  id: "plop_2"
-  type: "sound"
-  data: "sound: \"/assets/Audio/Plop Sounds/plop_2.ogg\"\n"
-  "looping: 0\n"
-  "group: \"master\"\n"
   "gain: 1.0\n"
   ""
   position {
