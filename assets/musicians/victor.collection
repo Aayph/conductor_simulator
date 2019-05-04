@@ -43,8 +43,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 82.0
-    y: 110.0
+    x: 153.0
+    y: 300.0
     z: -0.5
   }
   rotation {
@@ -54,8 +54,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 0.5
-    y: 0.5
+    x: 1.0
+    y: 1.0
     z: 1.0
   }
 }

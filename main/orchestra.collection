@@ -3,8 +3,8 @@ collection_instances {
   id: "berta"
   collection: "/assets/musicians/berta.collection"
   position {
-    x: 628.0
-    y: 1453.0
+    x: 650.0
+    y: 1176.0
     z: 0.0
   }
   rotation {
@@ -23,8 +23,8 @@ collection_instances {
   id: "ulf"
   collection: "/assets/musicians/ulf.collection"
   position {
-    x: 372.0
-    y: 1445.0
+    x: 342.0
+    y: 1225.0
     z: 0.0
   }
   rotation {
@@ -43,8 +43,8 @@ collection_instances {
   id: "victor"
   collection: "/assets/musicians/victor.collection"
   position {
-    x: 492.0
-    y: 1484.0
+    x: 466.0
+    y: 1225.0
     z: 0.0
   }
   rotation {
@@ -63,8 +63,8 @@ collection_instances {
   id: "viola"
   collection: "/assets/musicians/viola.collection"
   position {
-    x: 246.0
-    y: 1435.0
+    x: 66.0
+    y: 1197.0
     z: 0.0
   }
   rotation {
