@@ -4,15 +4,19 @@ go.property("damping", 0.2)
 go.property("maxAngle", 45)
 go.property("wobbelAmount", 0.001)
 
+local timestep = 1.0 / 60.0
+
 function init(self)
 	self.t = 0
 	self.lastWorldPos = go.get_world_position() + vmath.rotate(go.get_world_rotation(), self.sensorPosOffset)
 	self.velocityNormal = vmath.vector3(1,0,0)
 	self.lastVelocity = 0
+	self.lastAccel = 0
 	self.rotationZ = 0
 	self.wobbelVelocity = 0
 	self.wobbelPosition = 0
 	self.wobbelPositionToAngleFactor = math.rad(self.maxAngle)
+	self.dtAccum = 0
 end
 
 function final(self)
@@ -23,21 +27,33 @@ end
 function update(self, dt)
 	local currentWorldPos = go.get_world_position() + vmath.rotate(go.get_world_rotation(), self.sensorPosOffset)
 	local worldMovement = currentWorldPos - self.lastWorldPos
-	local currentVelocity = vmath.dot(worldMovement, vmath.rotate(go.get_world_rotation(), self.velocityNormal)) / dt
+	local distanceTraveled = vmath.dot(worldMovement, vmath.rotate(go.get_world_rotation(), self.velocityNormal))
+	local currentVelocity = distanceTraveled / dt
+	--currentVelocity = math.max(-2000, math.min(2000, currentVelocity))
 	local accel = (currentVelocity - self.lastVelocity) / dt
-	self.wobbelVelocity = self.wobbelVelocity + self.wobbelAmount * accel * dt
-	self.wobbelPosition = self.wobbelPosition + self.wobbelVelocity * dt
-	self.wobbelPosition = math.min(1, math.max(-1, self.wobbelPosition))
-	
-	go.set_rotation(vmath.quat_rotation_z(self.wobbelPosition * self.wobbelPositionToAngleFactor))
+	--accel = math.max(-5000, math.min(5000, accel))
 
-	self.wobbelVelocity = self.wobbelVelocity - ((self.wobbelPosition * self.force) + (self.wobbelVelocity * self.damping)) * dt
-	--self.wobbelVelocity = math.min(10, math.max(-10, self.wobbelVelocity))
-	
-	--msg.post("@render:", "draw_text", { text = "X", position = currentWorldPos })
-	--msg.post("@render:", "draw_line", { start_point = currentWorldPos, end_point = currentWorldPos + vmath.rotate(go.get_world_rotation(), self.velocityNormal) * 200, color = vmath.vector4(1, 0, 0, 1) })
+	self.dtAccum = self.dtAccum + dt
+	while self.dtAccum >= timestep do
+		self.wobbelVelocity = self.wobbelVelocity + self.wobbelAmount * accel * timestep
+		self.wobbelPosition = self.wobbelPosition + self.wobbelVelocity * timestep
+
+		if self.wobbelPosition > 1 then
+			self.wobbelPosition = 1
+			if self.wobbelVelocity > 0 then self.wobbelVelocity = 0 end
+		elseif self.wobbelPosition < -1 then
+			self.wobbelPosition = -1
+			if self.wobbelVelocity < 0 then self.wobbelVelocity = 0 end
+		end
+		self.wobbelVelocity = self.wobbelVelocity - self.wobbelPosition * self.force * timestep
+		self.wobbelVelocity = self.wobbelVelocity - self.wobbelVelocity * self.damping * timestep
+		self.dtAccum = self.dtAccum - timestep
+	end
+
+	go.set_rotation(vmath.quat_rotation_z(self.wobbelPosition * self.wobbelPositionToAngleFactor))
 	self.lastWorldPos = currentWorldPos
 	self.lastVelocity = currentVelocity
+	self.lastAccel = accel
 end
 
 function on_message(self, message_id, message, sender)

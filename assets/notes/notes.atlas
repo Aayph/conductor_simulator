@@ -1,0 +1,33 @@
+images {
+  image: "/assets/notes/bubble_bad.png"
+}
+images {
+  image: "/assets/notes/bubble_good.png"
+}
+images {
+  image: "/assets/notes/note1_bad.png"
+}
+images {
+  image: "/assets/notes/note1_good.png"
+}
+images {
+  image: "/assets/notes/note2_bad.png"
+}
+images {
+  image: "/assets/notes/note2_good.png"
+}
+images {
+  image: "/assets/notes/note3_bad.png"
+}
+images {
+  image: "/assets/notes/note3_good.png"
+}
+images {
+  image: "/assets/notes/note4_bad.png"
+}
+images {
+  image: "/assets/notes/note4_good.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0

@@ -35,9 +35,8 @@ end
 
 function update(self, dt)
 	if self.currentlyPressed then
-		self.currentTargetRotation = self.pressedStartRotation + (self.pressedStartX - self.currentMouseX)
-		self.currentTargetRotation = math.min(self.maxAngle, math.max(self.minAngle, self.currentTargetRotation))
-		self.currentTargetRotation = -math.deg(angleBetweenVectors(vmath.vector3(0,1,0), vmath.vector3(self.currentMouseX, self.currentMouseY, 0)))
+		local rootToMouse = vmath.vector3(self.currentMouseX, self.currentMouseY, 0) - go.get_world_position()
+		self.currentTargetRotation = -math.deg(angleBetweenVectors(vmath.vector3(0,1,0), rootToMouse))
 	end
 	self.currentRotation = vmath.lerp(dt * 10, self.currentRotation, self.currentTargetRotation)
 	go.set_rotation(vmath.quat_rotation_z(math.rad(self.currentRotation)))

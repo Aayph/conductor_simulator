@@ -1,14 +1,20 @@
 images {
-  image: "/assets/baton.png"
+  image: "/assets/arm/baton.png"
 }
 images {
-  image: "/assets/hand.png"
+  image: "/assets/arm/hand.png"
 }
 images {
-  image: "/assets/lower-arm.png"
+  image: "/assets/arm/arm4.png"
 }
 images {
-  image: "/assets/upper-arm.png"
+  image: "/assets/arm/arm3.png"
+}
+images {
+  image: "/assets/arm/arm2.png"
+}
+images {
+  image: "/assets/arm/arm1.png"
 }
 margin: 0
 extrude_borders: 0
