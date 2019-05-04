@@ -15,10 +15,9 @@ end
 
 function update(self, dt)
 	if main_menu_state == 2 then
-		print("ende")
 		gui.animate(self.button1, "position.x", 327, gui.EASING_INCUBIC, 1)
 		gui.animate(self.button2, "position.x", 734, gui.EASING_INCUBIC, 1)
-		gui.animate(self.the_curtain, "position.y", 0, gui.EASING_INCUBIC, 1, 0,on_startlevel1)
+		gui.animate(self.the_curtain, "position.y", 0, gui.EASING_INCUBIC, 1)
 		main_menu_state = 0
 	end
 end
