@@ -27,6 +27,20 @@ end
 function final(self)
 	notes[self.note_id] = nil
 	notes_done = notes_done + 1
+	if self.progress >= 1 then
+		if self.goodnote then
+			level_score = level_score + good_value
+		else
+			level_score = level_score - bad_value
+		end
+	else
+		if self.goodnote then
+			level_score = level_score - good_value
+		else
+			level_score = level_score + bad_value
+		end
+	end
+		
 end
 
 function update(self, dt)
