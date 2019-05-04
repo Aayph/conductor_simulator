@@ -1,2 +1,2 @@
-prototype: "/gameobjects/note.go"
+prototype: "/gameobjects/note_object.go"
 load_dynamically: false

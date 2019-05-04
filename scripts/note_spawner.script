@@ -1,21 +1,22 @@
 require "data.music"
+require "data.gamedata"
 
 function init(self)
 	self.time = 0
 	self.play = 0
 	self.note_list = {}
-	self.note_count = 0
 	self.note_index = 0
 end
 
 function update(self, dt)
 	if self.play == 1 then
 		self.time = self.time + dt * 1000
+		level_age = level_age + dt
 		while (self.note_list[self.note_index][0] <= self.time) do
 			factory.create("#note_factory", nil, nil, {note_id = self.note_index, pitch = self.note_list[self.note_index][1], velocity = self.note_list[self.note_index][2]})
 			self.note_index = self.note_index + 1
 		end
-		if (self.note_index == self.note_count - 1) then
+		if (self.note_index == note_count - 1) then
 			self.play = 0
 		end
 	end
@@ -44,12 +45,13 @@ function readMusic(self, song)
 				values[n] = v
 				n = n + 1
 			end
-			self.note_list[self.note_count] = {}
-			self.note_list[self.note_count][0] = tonumber(values[0])
-			self.note_list[self.note_count][1] = math.abs((tonumber(values[1]) - minPitch) / (maxPitch - minPitch) - 1)
-			self.note_list[self.note_count][2] = (tonumber(values[2])) / maxVelocity
-			self.note_count = self.note_count + 1
+			self.note_list[note_count] = {}
+			self.note_list[note_count][0] = tonumber(values[0])
+			self.note_list[note_count][1] = math.abs((tonumber(values[1]) - minPitch) / (maxPitch - minPitch) - 1)
+			self.note_list[note_count][2] = (tonumber(values[2])) / maxVelocity
+			self.note_count = note_count + 1
 		end
 	end
+	notes_done = 0
 	self.play = 1
 end

@@ -23,6 +23,10 @@ function on_input(self, action_id, action)
 		if gui.pick_node(button, action.x, action.y) then 
 			msg.post("/game_handler", "start_level", {levelid = "01"})			
 		end
+		local button = gui.get_node("button_start2/button") 
+		if gui.pick_node(button, action.x, action.y) then 
+			msg.post("/game_handler", "start_level", {levelid = "02"})			
+		end
 	end
 end
 
