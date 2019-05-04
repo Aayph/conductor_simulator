@@ -5,10 +5,13 @@ images {
   image: "/gui/speechbubble2.png"
 }
 images {
-  image: "/gui/bg_blurred.png"
+  image: "/gui/NoodleEdition.png"
 }
 images {
-  image: "/gui/NoodleEdition.png"
+  image: "/gui/curtain.png"
+}
+images {
+  image: "/gui/sheet.png"
 }
 margin: 0
 extrude_borders: 0
