@@ -33,7 +33,7 @@ end
 
 function update_position(self)
 	
-	go.set_position(vmath.vector3(calculate_x(self) * screenwidth, vmath.lerp(self.progress, note_start_y, note_end_y) * screenheight, 0))
+	go.set_position(vmath.vector3(calculate_x(self) * screenwidth, vmath.lerp(self.progress, note_start_y, note_end_y) * screenheight, 0.5))
 end
 
 function calculate_x(self)

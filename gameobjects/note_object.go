@@ -1,6 +1,6 @@
 components {
   id: "Note"
-  component: "/scripts/note.script"
+  component: "/scripts/note_object.script"
   position {
     x: 0.0
     y: 0.0

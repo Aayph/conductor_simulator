@@ -16,7 +16,7 @@ components {
 embedded_components {
   id: "note_factory"
   type: "factory"
-  data: "prototype: \"/gameobjects/note.go\"\n"
+  data: "prototype: \"/gameobjects/note_object.go\"\n"
   "load_dynamically: false\n"
   ""
   position {
