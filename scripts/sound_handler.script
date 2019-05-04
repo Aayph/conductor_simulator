@@ -11,5 +11,9 @@ function on_message(self, message_id, message, sender)
 			pitch = 4
 		end
 		msg.post("#bad_note_"..pitch.."_"..rand, "play_sound")
+
+	elseif message_id == hash("play_pop_sound") then
+		rand = math.random(1, 4)
+		msg.post("#plop_"..rand, "play_sound")
 	end
 end

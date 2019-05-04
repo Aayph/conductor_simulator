@@ -69,7 +69,7 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"note_time\"\n"
-  "    value: \"10.0\"\n"
+  "    value: \"5.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
