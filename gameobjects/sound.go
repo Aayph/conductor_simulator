@@ -391,9 +391,9 @@ embedded_components {
 embedded_components {
   id: "maintheme"
   type: "sound"
-  data: "sound: \"/assets/Audio/music_part_1.ogg\"\n"
+  data: "sound: \"/assets/Audio/mainmenu_music.ogg\"\n"
   "looping: 1\n"
-  "group: \"master\"\n"
+  "group: \"music\"\n"
   "gain: 1.0\n"
   ""
   position {

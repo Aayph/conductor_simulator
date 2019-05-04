@@ -32,5 +32,11 @@ function on_message(self, message_id, message, sender)
 
 	elseif message_id == hash("play_button") then
 		msg.post("#Button", "play_sound")
+		
+	elseif message_id == hash("play_main") then
+		msg.post("#maintheme", "play_sound")
+		
+	elseif message_id == hash("stop_main") then
+		msg.post("#maintheme", "stop_sound")
 	end
 end
