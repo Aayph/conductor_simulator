@@ -293,3 +293,83 @@ embedded_components {
     w: 1.0
   }
 }
+embedded_components {
+  id: "plop_1"
+  type: "sound"
+  data: "sound: \"/assets/Audio/Plop Sounds/plop_1.wav\"\n"
+  "looping: 0\n"
+  "group: \"Plops\"\n"
+  "gain: 1.0\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "plop_2"
+  type: "sound"
+  data: "sound: \"/assets/Audio/Plop Sounds/plop_2.wav\"\n"
+  "looping: 0\n"
+  "group: \"Plops\"\n"
+  "gain: 1.0\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "plop_3"
+  type: "sound"
+  data: "sound: \"/assets/Audio/Plop Sounds/plop_3.wav\"\n"
+  "looping: 0\n"
+  "group: \"Plops\"\n"
+  "gain: 1.0\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "plop_4"
+  type: "sound"
+  data: "sound: \"/assets/Audio/Plop Sounds/plop_4.wav\"\n"
+  "looping: 0\n"
+  "group: \"Plops\"\n"
+  "gain: 1.0\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}

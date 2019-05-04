@@ -14,7 +14,7 @@ components {
   }
   properties {
     id: "sensorPosOffset"
-    value: "0.0, 50.0, 0.0"
+    value: "0.0, 150.0, 0.0"
     type: PROPERTY_TYPE_VECTOR3
   }
   properties {
@@ -32,14 +32,14 @@ embedded_components {
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
-    x: 0.0
-    y: 32.0
-    z: 1.0
+    x: -24.0
+    y: 92.0
+    z: 0.0
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.70710677
-    w: 0.70710677
+    z: 0.0
+    w: 1.0
   }
 }
