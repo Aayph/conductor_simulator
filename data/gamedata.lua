@@ -15,9 +15,10 @@ level_time = 0
 
 level_play = 0
 
-level_score = 0
 good_value = 10
 bad_value = 50
+good_count = 0
+bad_count = 0
 
 
 notes = {}
