@@ -61,14 +61,17 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("trigger") then
+		local points = ""
 		if self.goodnote then
 			msg.post("/sound#sound_handler", "play_pop_sound", {is_bad = 1})
 			level_score = level_score - good_value
+			points = "-"..good_value
 		else
 			msg.post("/sound#sound_handler", "play_pop_sound", {is_bad = 0})
 			level_score = level_score + bad_value
+			points = "+"..bad_value
 		end
-		factory.create("#explosionFactory", go.get_world_position(), nil, {}, vmath.vector3(0.8))
+		factory.create("#explosionFactory", go.get_world_position(), nil, { points = points}, vmath.vector3(0.8))
 		go.delete()
 	end
 end

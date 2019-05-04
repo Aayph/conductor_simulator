@@ -1,8 +1,11 @@
+go.property("points", "")
+
 local function done(self, url, property)
 	go.delete()
 end
 
 function init(self)
+	go.set("#label", "text", self.points)
 	msg.post("#sprite", "play_animation", { id = hash("explode") })
 	go.animate(go.get_id(), "position.y", go.PLAYBACK_ONCE_FORWARD, go.get_position().y + 200, go.EASING_OUTCUBIC, 3, 0, done)
 end
