@@ -37,20 +37,18 @@ function readMusic(self, song)
 	self.note_count = 0
 	self.note_index = 0
 	for key,songpart in pairs(song) do
-		for note in string.gmatch(songpart, "[^,]+") do
+		for note in string.gmatch(songpart, "[^;]+") do
 			local values = {}
 			local n = 0
-			for v in string.gmatch(note, "[^%s]+") do
+			for v in string.gmatch(note, "[^,]+") do
 				values[n] = v
 				n = n + 1
 			end
-			if values[1] == "On" then
-				self.note_list[self.note_count] = {}
-				self.note_list[self.note_count][0] = tonumber(values[0])
-				self.note_list[self.note_count][1] = (tonumber(string.sub(values[3], 3)) - minPitch) / (maxPitch - minPitch)
-				self.note_list[self.note_count][2] = (tonumber(string.sub(values[4], 3))) / maxVelocity
-				self.note_count = self.note_count + 1
-			end
+			self.note_list[self.note_count] = {}
+			self.note_list[self.note_count][0] = tonumber(values[0])
+			self.note_list[self.note_count][1] = (tonumber(values[1]) - minPitch) / (maxPitch - minPitch)
+			self.note_list[self.note_count][2] = (tonumber(values[2])) / maxVelocity
+			self.note_count = self.note_count + 1
 		end
 	end
 	self.play = 1
