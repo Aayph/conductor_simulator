@@ -12,8 +12,10 @@ go.property("bad_note_value", 50)
 
 function init(self)
 	level_age = 0
-	good_value = self.good_note_value;
-	bad_value = self.bad_note_value;
+	good_value = self.good_note_value
+	bad_value = self.bad_note_value
+	good_count = 0
+	bad_count = 0
 	msg.post("level_gui", "disable")
 	traveltime = self.note_time
 	level_time = self.song_length + self.note_time
