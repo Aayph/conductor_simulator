@@ -1,48 +1,29 @@
-script: "/gui/level_gui/level_gui_script.gui_script"
+script: ""
+fonts {
+  name: "font_goudy"
+  font: "/gui/gaudifont.font"
+}
+fonts {
+  name: "averiafont"
+  font: "/gui/averiafont.font"
+}
+textures {
+  name: "gui"
+  texture: "/gui/gui.atlas"
+}
+textures {
+  name: "arm"
+  texture: "/assets/arm.atlas"
+}
+textures {
+  name: "notes"
+  texture: "/assets/notes/notes.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0
   z: 0.0
   w: 0.0
-}
-nodes {
-  position {
-    x: 547.0
-    y: 957.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEMPLATE
-  id: "template"
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  template: "/gui/button_end.gui"
-  template_node_child: false
 }
 nodes {
   position {
@@ -78,12 +59,11 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "gui/sheet"
-  id: "template/button"
+  id: "button"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "template"
   layer: ""
   inherit_alpha: true
   slice9 {
@@ -96,7 +76,7 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
-  template_node_child: true
+  template_node_child: false
   size_mode: SIZE_MODE_MANUAL
 }
 nodes {
@@ -134,7 +114,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "Ende"
   font: "font_goudy"
-  id: "template/text"
+  id: "text"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -152,13 +132,13 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "template/button"
+  parent: "button"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
-  template_node_child: true
+  template_node_child: false
   text_leading: 1.0
   text_tracking: 0.0
 }
@@ -197,7 +177,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "Klicken, um fortzufahren"
   font: "averiafont"
-  id: "template/description"
+  id: "description"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_N
@@ -215,13 +195,13 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: true
-  parent: "template/button"
+  parent: "button"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
-  template_node_child: true
+  template_node_child: false
   text_leading: 1.0
   text_tracking: 0.0
 }
