@@ -64,7 +64,7 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"song_length\"\n"
-  "    value: \"2.0\"\n"
+  "    value: \"112.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"

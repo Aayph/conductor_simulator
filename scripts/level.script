@@ -34,6 +34,7 @@ function on_input(self, action_id, action)
 	if action_id ~= nil and self.isEnd == 1 then
 		if action.pressed then 
 			msg.post("/game_handler", "end_level")		
+			msg.post("/sound#sound_handler", "play_button")		
 		end
 	end
 end

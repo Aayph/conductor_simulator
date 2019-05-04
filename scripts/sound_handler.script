@@ -15,5 +15,8 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("play_pop_sound") then
 		rand = math.random(1, 4)
 		msg.post("#plop_"..rand, "play_sound")
+
+	elseif message_id == hash("play_button") then
+		msg.post("#Button", "play_sound")
 	end
 end
