@@ -198,7 +198,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "This is a lable"
   font: "averiafont"
-  id: "template/description"
+  id: "ok_button/description"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -216,7 +216,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "template"
+  parent: "ok_button"
   layer: ""
   inherit_alpha: true
   alpha: 1.0

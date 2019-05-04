@@ -18,7 +18,7 @@ function init(self)
 end
 
 function update(self, dt)
-	if level_age >= level_time then
+	if level_age >= level_time and self.isEnd == 0 then
 		music_end(self)
 	end
 end
