@@ -253,3 +253,43 @@ embedded_components {
     w: 1.0
   }
 }
+embedded_components {
+  id: "Button"
+  type: "sound"
+  data: "sound: \"/assets/Audio/button.wav\"\n"
+  "looping: 0\n"
+  "group: \"UI\"\n"
+  "gain: 1.0\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "Endstate"
+  type: "sound"
+  data: "sound: \"/assets/Audio/endstate_1.wav\"\n"
+  "looping: 0\n"
+  "group: \"States\"\n"
+  "gain: 1.0\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
