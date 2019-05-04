@@ -14,6 +14,7 @@ level_age = 0
 level_time = 0
 
 level_play = 0
+main_menu_state = 0
 
 good_value = 10
 bad_value = 50

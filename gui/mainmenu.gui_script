@@ -1,3 +1,6 @@
+require "data.gamedata"
+
+
 function init(self)
 	msg.post("#button_start", "acquire_input_focus")
 	self.the_curtain = gui.get_node("curtain_root")
@@ -11,13 +14,16 @@ function final(self)
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Remove this function if not needed
+	if main_menu_state == 2 then
+		print("ende")
+		gui.animate(self.button1, "position.x", 327, gui.EASING_INCUBIC, 1)
+		gui.animate(self.button2, "position.x", 734, gui.EASING_INCUBIC, 1)
+		gui.animate(self.the_curtain, "position.y", 0, gui.EASING_INCUBIC, 1, 0,on_startlevel1)
+		main_menu_state = 0
+	end
 end
 
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Remove this function if not needed
 end
 
 function on_input(self, action_id, action)
@@ -26,14 +32,16 @@ function on_input(self, action_id, action)
 			gui.animate(self.button1, "position.x", -800, gui.EASING_INCUBIC, 1)
 			gui.animate(self.button2, "position.x", 1800, gui.EASING_INCUBIC, 1)
 			gui.animate(self.the_curtain, "position.y", 1000, gui.EASING_INCUBIC, 1, 0,on_startlevel1)
-			msg.post("/sound#sound_handler", "play_button")		
+			msg.post("/sound#sound_handler", "play_button")
+			main_menu_state = 1		
 		end
 		
 		if gui.pick_node(self.button2, action.x, action.y) then
 			gui.animate(self.button1, "position.x", -800, gui.EASING_INCUBIC, 1)
 			gui.animate(self.button2, "position.x", 1800, gui.EASING_INCUBIC, 1)
 			gui.animate(self.the_curtain, "position.y", 1000, gui.EASING_INCUBIC, 1, 0,on_startlevel2)
-			msg.post("/sound#sound_handler", "play_button")		
+			msg.post("/sound#sound_handler", "play_button")	
+			main_menu_state = 1			
 		end
 	end
 end

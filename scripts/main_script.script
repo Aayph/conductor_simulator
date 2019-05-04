@@ -25,6 +25,7 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("end_level") then
 		--msg.post("/level#" .. self.active_level, "unload")
 		msg.post("/floete/go", "enable")
+		main_menu_state = 2		
 		go.delete(self.level)
 		msg.post("/sound#sound_handler", "play_main")
 	elseif message_id == hash("proxy_loaded") then
