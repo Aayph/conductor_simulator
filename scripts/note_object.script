@@ -32,6 +32,9 @@ end
 function update(self, dt)
 	self.progress = self.progress + dt * self.speed
 	if self.progress > 1 then
+		if not self.goodnote then
+			msg.post("/sound#sound_handler", "play_bad_note", { pitch = self.pitch })
+		end
 		go.delete()
 	end
 	
@@ -57,6 +60,8 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("trigger") then
+		msg.post("/sound#sound_handler", "play_pop_sound")
+		factory.create("#explosionFactory", go.get_world_position(), nil, {}, vmath.vector3(0.8))
 		go.delete()
 	end
 end
