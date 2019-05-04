@@ -27,6 +27,7 @@ end
 function final(self)
 	notes[self.note_id] = nil
 	notes_done = notes_done + 1
+		
 end
 
 function update(self, dt)
@@ -60,7 +61,13 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("trigger") then
-		msg.post("/sound#sound_handler", "play_pop_sound")
+		if self.goodnote then
+			msg.post("/sound#sound_handler", "play_pop_sound", {is_bad = 1})
+			level_score = level_score - good_value
+		else
+			msg.post("/sound#sound_handler", "play_pop_sound", {is_bad = 0})
+			level_score = level_score + bad_value
+		end
 		factory.create("#explosionFactory", go.get_world_position(), nil, {}, vmath.vector3(0.8))
 		go.delete()
 	end
