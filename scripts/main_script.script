@@ -2,7 +2,7 @@ require "data.gamedata"
 
 function init(self)
 	--msg.post("/level01/noteSpawner#NoteSpawner", "init_music", {songid = 0})
-	
+
 end
 
 function startSong()
@@ -10,14 +10,22 @@ function startSong()
 end
 
 function update(self, dt)
-	
 end
+
+
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("start_level") then
 		msg.post("/floete/go", "disable")
-		self.orchestra_collection = collectionfactory.create("#orchestra_factory")
-		self.level = collectionfactory.create("/level#" .. message["levelid"])
-		self.arm_collection = collectionfactory.create("#arm_factory")
+		self.active_level = message["levelid"]
+		self.level = collectionfactory.create("/level#" .. self.active_level)
+		--msg.post("/level#" .. self.active_level, "load")
+	elseif message_id == hash("end_level") then
+		--msg.post("/level#" .. self.active_level, "unload")
+		msg.post("/floete/go", "enable")
+		go.delete(self.level)
+	elseif message_id == hash("proxy_loaded") then
+		msg.post(sender, "init")
+		msg.post(sender, "enable")
 	end
 end

@@ -276,7 +276,7 @@ embedded_components {
 embedded_components {
   id: "Endstate"
   type: "sound"
-  data: "sound: \"/assets/Audio/endstate_1.wav\"\n"
+  data: "sound: \"/assets/Audio/endstate_1.ogg\"\n"
   "looping: 0\n"
   "group: \"States\"\n"
   "gain: 1.0\n"

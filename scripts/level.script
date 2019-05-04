@@ -7,13 +7,32 @@ go.property("note_time", 10)
 go.property("jiggle_speed", 0.4)
 
 function init(self)
+	level_age = 0
+	msg.post("level_gui", "disable")
 	traveltime = self.note_time
 	level_time = self.song_length + self.note_time
 	note_jiggl_speed = self.jiggle_speed
 	msg.post("note_spawner", "init_music", {songid = self.song_id})
+	self.isEnd = 0
+	msg.post(".", "acquire_input_focus")
 end
 
-
 function update(self, dt)
-	
+	if level_age >= level_time then
+		music_end(self)
+	end
+end
+
+function music_end(self)
+	msg.post("level_gui", "enable")
+	msg.post("/sound#sound_handler", "play_levelend", {rating = 0.5})
+	self.isEnd = 1
+end
+
+function on_input(self, action_id, action)
+	if action_id ~= nil and self.isEnd == 1 then
+		if action.pressed then 
+			msg.post("/game_handler", "end_level")		
+		end
+	end
 end
