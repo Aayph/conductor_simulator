@@ -1,6 +1,9 @@
 images {
   image: "/assets/bg.png"
 }
+images {
+  image: "/gui/table.png"
+}
 margin: 0
 extrude_borders: 0
 inner_padding: 0
