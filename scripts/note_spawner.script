@@ -49,7 +49,7 @@ function readMusic(self, song)
 			self.note_list[note_count][0] = tonumber(values[0])
 			self.note_list[note_count][1] = math.abs((tonumber(values[1]) - minPitch) / (maxPitch - minPitch) - 1)
 			self.note_list[note_count][2] = (tonumber(values[2])) / maxVelocity
-			self.note_count = note_count + 1
+			note_count = note_count + 1
 		end
 	end
 	notes_done = 0
