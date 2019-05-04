@@ -6,7 +6,7 @@ go.property("Plops", 0.8)
 
 function init(self)
 	sound.set_group_gain("bad_note", self.bad_note)
-	sound.set_group_gain("UI", self.ui)
+	sound.set_group_gain("UI", self.gui)
 	sound.set_group_gain("States", self.States)
 	sound.set_group_gain("music", self.music)
 	sound.set_group_gain("Plops", self.Plops)
