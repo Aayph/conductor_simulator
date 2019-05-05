@@ -38,7 +38,7 @@ function update(self, dt)
 				vmath.vector3(0.5)) --> (scale)
 			self.next_noteID = self.next_noteID + 1
 			note_count = note_count + 1
-			self.nextBadNote = math.random(2,4)
+			self.nextBadNote = math.random(bad_min_time,bad_max_time)
 		end
 		
 		if (self.next_noteID == note_count - 1) then

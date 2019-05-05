@@ -9,14 +9,21 @@ go.property("jiggle_speed", 0.4)
 go.property("good_note_value", 10)
 go.property("bad_note_value", 50)
 
+go.property("min_time_bad_note", 2)
+go.property("max_time_bad_note", 4)
 
 function init(self)
+
+	max_bad_notes = self.song_length / ((self.min_time_bad_note + self.max_time_bad_note) * 0.5)
+
 	level_age = 0
 	good_value = self.good_note_value
 	bad_value = self.bad_note_value
 	good_count = 0
 	bad_count = 0
-	msg.post("level_gui", "disable")
+	bad_min_time = self.min_time_bad_note
+	bad_max_time = self.max_time_bad_note
+	
 	traveltime = self.note_time
 	level_time = self.song_length + self.note_time
 	note_jiggl_speed = self.jiggle_speed
@@ -25,6 +32,7 @@ function init(self)
 	msg.post(".", "acquire_input_focus")
 	self.music_on = 0
 	note_value = 1
+	main_menu_state = 1	
 end
 
 function update(self, dt)
@@ -38,7 +46,7 @@ function update(self, dt)
 end
 
 function music_end(self)
-	msg.post("level_gui", "enable")
+	main_menu_state = 2
 	msg.post("/sound#sound_handler", "play_levelend", {rating = 0.5})
 	self.isEnd = 1
 end

@@ -1,32 +1,47 @@
 require "data.gamedata"
 
+go.property("main_gain", 0)
+
 function init(self)
 	--msg.post("/level01/noteSpawner#NoteSpawner", "init_music", {songid = 0})
 
-	msg.post("/sound#sound_handler", "play_main")
+	--msg.post("/sound#sound_handler", "play_main")
+	music_fade_in(self)	
 end
 
-function startSong()
-	
+function music_fade_in(self) 
+	msg.post("#main_music", "play_sound")
+	self.music_state = 1 
+	go.animate("#", "main_gain", go.PLAYBACK_ONCE_FORWARD, 0.2, go.EASING_LINEAR, 5, 0)
+end
+
+function music_fade_out(self) 
+	go.animate("#", "main_gain", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_LINEAR, 3, 0,
+	function() 
+		self.music_state = 2
+	end)
 end
 
 function update(self, dt)
+	if self.music_state == 1 then 
+		msg.post("#main_music", "set_gain", {gain = self.main_gain}) 
+	elseif self.music_state == 2 then
+		msg.post("#main_music", "stop_sound")
+		self.music_state = 0		
+	end
 end
 
 
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("start_level") then
-		msg.post("/floete/go", "disable")
 		self.active_level = message["levelid"]
 		self.level = collectionfactory.create("/level#" .. self.active_level)
-		msg.post("/sound#sound_handler", "stop_main")
-		--msg.post("/level#" .. self.active_level, "load")
 	elseif message_id == hash("end_level") then
-		--msg.post("/level#" .. self.active_level, "unload")
+		music_fade_in(self)	
 		go.delete(self.level)
-		msg.post("/floete/go", "enable")
-		main_menu_state = 2		
-		msg.post("/sound#sound_handler", "play_main")
+		main_menu_state = 4		
+	elseif message_id == hash("stop_main_music") then
+		music_fade_out(self)	
 	end
 end

@@ -353,7 +353,7 @@ embedded_components {
   type: "sound"
   data: "sound: \"/assets/Audio/Plop Sounds/plop_good_2.ogg\"\n"
   "looping: 0\n"
-  "group: \"master\"\n"
+  "group: \"Plops\"\n"
   "gain: 1.0\n"
   ""
   position {
@@ -373,7 +373,7 @@ embedded_components {
   type: "sound"
   data: "sound: \"/assets/Audio/Plop Sounds/plop_good_3.ogg\"\n"
   "looping: 0\n"
-  "group: \"master\"\n"
+  "group: \"Plops\"\n"
   "gain: 1.0\n"
   ""
   position {
@@ -393,7 +393,7 @@ embedded_components {
   type: "sound"
   data: "sound: \"/assets/Audio/Plop Sounds/plop_good_4.ogg\"\n"
   "looping: 0\n"
-  "group: \"master\"\n"
+  "group: \"Plops\"\n"
   "gain: 1.0\n"
   ""
   position {
@@ -413,7 +413,7 @@ embedded_components {
   type: "sound"
   data: "sound: \"/assets/Audio/Plop Sounds/plop_bad_1.ogg\"\n"
   "looping: 0\n"
-  "group: \"master\"\n"
+  "group: \"Plops\"\n"
   "gain: 1.0\n"
   ""
   position {
@@ -433,7 +433,7 @@ embedded_components {
   type: "sound"
   data: "sound: \"/assets/Audio/Plop Sounds/plop_bad_2.ogg\"\n"
   "looping: 0\n"
-  "group: \"master\"\n"
+  "group: \"Plops\"\n"
   "gain: 1.0\n"
   ""
   position {
@@ -453,7 +453,7 @@ embedded_components {
   type: "sound"
   data: "sound: \"/assets/Audio/Plop Sounds/plop_bad_3.ogg\"\n"
   "looping: 0\n"
-  "group: \"master\"\n"
+  "group: \"Plops\"\n"
   "gain: 1.0\n"
   ""
   position {
@@ -473,7 +473,7 @@ embedded_components {
   type: "sound"
   data: "sound: \"/assets/Audio/Plop Sounds/plop_bad_4.ogg\"\n"
   "looping: 0\n"
-  "group: \"master\"\n"
+  "group: \"Plops\"\n"
   "gain: 1.0\n"
   ""
   position {

@@ -15,3 +15,9 @@ title = conductor_simulator
 write_log = 0
 dependencies = 
 
+[physics]
+debug = 0
+
+[sound]
+max_sound_buffers = 64
+
