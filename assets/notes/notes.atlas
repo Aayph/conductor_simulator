@@ -28,6 +28,6 @@ images {
 images {
   image: "/assets/notes/note4_good.png"
 }
-margin: 0
-extrude_borders: 0
+margin: 1
+extrude_borders: 1
 inner_padding: 0
