@@ -2180,7 +2180,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Br\303\274hren, um fortzufahren"
+  text: "Ber\303\274hren, um fortzufahren"
   font: "averiafont"
   id: "button_end/description"
   xanchor: XANCHOR_NONE

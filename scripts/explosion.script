@@ -8,7 +8,7 @@ function init(self)
 	local pointsstr = tostring(self.points)
 	if self.points > 0 then 
 		pointsstr = "+"..pointsstr
-		go.set("#label", "color", vmath.vector4(0, 1, 0, 1))
+		go.set("#label", "color", vmath.vector4(0.2, 0.6, 0.2, 1))
 	end
 	label.set_text("#label", pointsstr)
 	msg.post("#sprite", "play_animation", { id = hash("explode") })

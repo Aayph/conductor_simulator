@@ -3,6 +3,7 @@ screenheight = 0
 
 traveltime = 8
 note_jiggl_speed = 0.4
+max_bad_v = 0.1
 
 note_start_y = -0.1
 note_end_y = 0.65
@@ -30,6 +31,10 @@ song_time = 0
 
 notes = {}
 batontip = nil
+
+
+lane_timer = {}
+lane_time = 1.5
 
 function get_relative_score()
 	f = (bad_count * bad_value - good_count * good_value) / (max_bad_notes * bad_value)

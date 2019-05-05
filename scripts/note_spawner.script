@@ -33,7 +33,7 @@ function update(self, dt)
 			factory.create("#note_factory", nil, nil, {
 				note_id = self.next_noteID,
 				pitch = math.random(),
-				velocity = 0,
+				velocity = math.random() * max_bad_v,
 				goodnote = false},
 				vmath.vector3(0.5)) --> (scale)
 			self.next_noteID = self.next_noteID + 1

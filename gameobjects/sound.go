@@ -29,7 +29,7 @@ components {
   }
 }
 embedded_components {
-  id: "bad_note_1_1"
+  id: "bad_note_4_1"
   type: "sound"
   data: "sound: \"/assets/Audio/Violin Noise/vln_noise_1_1.ogg\"\n"
   "looping: 0\n"
@@ -49,7 +49,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "bad_note_1_2"
+  id: "bad_note_4_2"
   type: "sound"
   data: "sound: \"/assets/Audio/Violin Noise/vln_noise_1_2.ogg\"\n"
   "looping: 0\n"
@@ -69,7 +69,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "bad_note_1_3"
+  id: "bad_note_4_3"
   type: "sound"
   data: "sound: \"/assets/Audio/Violin Noise/vln_noise_1_3.ogg\"\n"
   "looping: 0\n"
@@ -89,7 +89,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "bad_note_2_1"
+  id: "bad_note_3_1"
   type: "sound"
   data: "sound: \"/assets/Audio/Violin Noise/vln_noise_2_1.ogg\"\n"
   "looping: 0\n"
@@ -109,7 +109,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "bad_note_2_2"
+  id: "bad_note_3_2"
   type: "sound"
   data: "sound: \"/assets/Audio/Violin Noise/vln_noise_2_2.ogg\"\n"
   "looping: 0\n"
@@ -129,7 +129,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "bad_note_2_3"
+  id: "bad_note_3_3"
   type: "sound"
   data: "sound: \"/assets/Audio/Violin Noise/vln_noise_2_3.ogg\"\n"
   "looping: 0\n"
@@ -149,7 +149,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "bad_note_3_1"
+  id: "bad_note_2_1"
   type: "sound"
   data: "sound: \"/assets/Audio/Violin Noise/vln_noise_3_1.ogg\"\n"
   "looping: 0\n"
@@ -169,7 +169,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "bad_note_3_2"
+  id: "bad_note_2_2"
   type: "sound"
   data: "sound: \"/assets/Audio/Violin Noise/vln_noise_3_2.ogg\"\n"
   "looping: 0\n"
@@ -189,7 +189,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "bad_note_3_3"
+  id: "bad_note_2_3"
   type: "sound"
   data: "sound: \"/assets/Audio/Violin Noise/vln_noise_3_3.ogg\"\n"
   "looping: 0\n"
@@ -209,7 +209,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "bad_note_4_1"
+  id: "bad_note_1_1"
   type: "sound"
   data: "sound: \"/assets/Audio/Violin Noise/vln_noise_4_1.ogg\"\n"
   "looping: 0\n"
@@ -229,7 +229,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "bad_note_4_2"
+  id: "bad_note_1_2"
   type: "sound"
   data: "sound: \"/assets/Audio/Violin Noise/vln_noise_4_2.ogg\"\n"
   "looping: 0\n"
@@ -249,7 +249,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "bad_note_4_3"
+  id: "bad_note_1_3"
   type: "sound"
   data: "sound: \"/assets/Audio/Violin Noise/vln_noise_4_3.ogg\"\n"
   "looping: 0\n"

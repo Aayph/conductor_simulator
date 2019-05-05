@@ -24,7 +24,7 @@ function update(self, dt)
 		gui.animate(self.button2, "position.x", 734, gui.EASING_INCUBIC, 1)
 		gui.animate(self.the_curtain, "position.y", 0, gui.EASING_INCUBIC, 1)
 		gui.animate(self.bars, "position.x", -50, gui.EASING_INCUBIC, 1)
-		gui.animate(self.button_end, "position.x", 1580, gui.EASING_INCUBIC, 1)
+		gui.animate(self.button_end, "position.x", 3000, gui.EASING_INCUBIC, 1)
 		gui.animate(self.score_bar, "size.y", 0, gui.EASING_INCUBIC, 1)
 		gui.animate(self.time_bar, "size.y", 0, gui.EASING_INCUBIC, 1)	
 		main_menu_state = 0
@@ -36,7 +36,7 @@ function update(self, dt)
 		gui.animate(self.time_bar, "size.y", (level_age/level_time)*1000, gui.EASING_INCUBIC, 0)	
 	elseif main_menu_state == 2 then	
 		gui.set_text(self.score_text, tostring(get_score()))
-		gui.animate(self.button_end, "position.x", 3000, gui.EASING_INCUBIC, 1)
+		gui.animate(self.button_end, "position.x", 580, gui.EASING_INCUBIC, 1)
 		main_menu_state = 3
 	end
 end

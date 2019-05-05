@@ -9,16 +9,19 @@ function init(self)
 	notes[self.note_id] = go.get_id()
 	self.progress = 0
 	self.jiggl = math.random(0, 360)
+	self.rotation = 0
 
 	self.base_x = (1/6) + self.pitch * (4/6)
 	update_position(self)
 
+	local note_sprite = 1
+	note_sprite = math.random(1, 4)
 	if self.goodnote then
-		msg.post("#note", "play_animation", {id = hash("note1_good")})
+		msg.post("#note", "play_animation", {id = hash("note"..note_sprite.."_good")})
 		msg.post("#noteBG", "play_animation", {id = hash("bubble_good")})
 		self.speed = 1.0 / traveltime
 	else
-		msg.post("#note", "play_animation", {id = hash("note1_bad")})
+		msg.post("#note", "play_animation", {id = hash("note"..note_sprite.."_bad")})
 		msg.post("#noteBG", "play_animation", {id = hash("bubble_bad")})
 		self.speed = 1.0 / (traveltime * 1.5)
 	end
@@ -27,7 +30,12 @@ end
 function final(self)
 	notes[self.note_id] = nil
 	notes_done = notes_done + 1
-		
+
+	if self.goodnote then
+		lane_timer[math.floor(self.pitch * 4 + 1)] = lane_time
+	else
+		lane_timer[math.floor(self.pitch * 4 + 1)] = 0
+	end
 end
 
 function update(self, dt)
@@ -44,11 +52,17 @@ function update(self, dt)
 		self.jiggl = self.jiggl - 360
 	end
 	update_position(self)
+	--update_rotation(self, dt)
 end
 
 function update_position(self)
 	
 	go.set_position(vmath.vector3(calculate_x(self) * screenwidth, vmath.lerp(self.progress, note_start_y, note_end_y) * screenheight, 0.5))
+end
+
+function update_rotation(self, dt)
+	self.rotation = self.rotation - (10 * dt * self.velocity)
+	go.set_rotation(vmath.quat_rotation_z(self.rotation), "#noteBG")
 end
 
 function calculate_x(self)

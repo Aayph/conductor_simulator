@@ -3,6 +3,10 @@ require "data.gamedata"
 go.property("main_gain", 0)
 
 function init(self)
+	lane_timer[1] = 0
+	lane_timer[2] = 0
+	lane_timer[3] = 0
+	lane_timer[4] = 0
 	--msg.post("/level01/noteSpawner#NoteSpawner", "init_music", {songid = 0})
 
 	--msg.post("/sound#sound_handler", "play_main")

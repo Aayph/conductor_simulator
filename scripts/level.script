@@ -6,16 +6,24 @@ go.property("song_length", 0) --seconds
 go.property("note_time", 10)
 go.property("jiggle_speed", 0.4)
 
+
 go.property("good_note_value", 10)
 go.property("bad_note_value", 50)
 
 go.property("min_time_bad_note", 2)
 go.property("max_time_bad_note", 4)
+go.property("max_bad_velocity", 0.1)
 
 function init(self)
 
+	lane_timer[1] = 0
+	lane_timer[2] = 0
+	lane_timer[3] = 0
+	lane_timer[4] = 0
+	
+	
 	max_bad_notes = self.song_length / ((self.min_time_bad_note + self.max_time_bad_note) * 0.5)
-
+	max_bad_v = self.max_bad_velocity
 	level_age = 0
 	good_value = self.good_note_value
 	bad_value = self.bad_note_value

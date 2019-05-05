@@ -1,4 +1,59 @@
 function init(self)
+	self.head_rotation = false
+	self.head_position = false
+	self.armR = false
+	self.armL_position = false
+	self.armL_rotation = false
+end
+
+function update(self, dt)
+	lane_timer[3] = lane_timer[3] - dt
+
+	if self.head_rotation == false and lane_timer[3] > 0 then
+		self.head_rotation = true
+		go.animate("head", "euler.z", go.PLAYBACK_ONCE_PINGPONG, 10, go.EASING_INOUTSINE, 2, 0,
+		function() 
+			self.head_rotation = false
+		end)		
+	end
+
+	if self.head_position == false and lane_timer[3] > 0 then
+		self.head_position = true
+		go.animate("head", "position.y", go.PLAYBACK_ONCE_PINGPONG, 10, go.EASING_INOUTSINE, 1, 0,
+		function() 
+			self.head_position = false
+		end)		
+	end
+
+	if self.armR == false and lane_timer[3] > 0 then
+		self.armR = true
+		go.animate("armR", "position.x", go.PLAYBACK_ONCE_PINGPONG, -30, go.EASING_INOUTSINE, 7, 0,
+		function() 
+			self.armR = false
+		end)		
+	end
+
+	if self.armL_position == false and lane_timer[3] > 0 then
+		self.armL_position = true
+		go.animate("armL", "position.x", go.PLAYBACK_ONCE_PINGPONG, 10, go.EASING_INOUTSINE, 2, 0,
+		function() 
+			self.armL_position = false
+		end)		
+	end
+
+	if self.armL_rotation == false and lane_timer[3] > 0 then
+		self.armL_rotation = true
+		local values = { 0, 0.4, 0.2, 0.7, 0.5, 1.0, 0.6, 0.2, 0.7, 0.5, 1 }
+		local my_easing = vmath.vector(values)
+		go.animate("armL", "euler.z", go.PLAYBACK_ONCE_PINGPONG, -20, my_easing, 9, 0,
+		function() 
+			self.armL_rotation = false
+		end)		
+	end
+end
+
+
+function start_animation(self)
 	-- Add initialization code here
 	-- Remove this function if not needed
 

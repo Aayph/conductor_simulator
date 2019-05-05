@@ -221,7 +221,7 @@ embedded_instances {
   children: "arm1"
   data: ""
   position {
-    x: 756.0
+    x: 820.0
     y: -43.0
     z: 0.0
   }

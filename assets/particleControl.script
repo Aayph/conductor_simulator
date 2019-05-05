@@ -1,3 +1,15 @@
+go.property("lane", 1)
+
 function init(self)
-	particlefx.play("#instrument_notes")
+	self.play = false
+end
+
+function update(self, dt)
+	if lane_timer[self.lane] > 0 and self.play == false then
+		particlefx.play("#instrument_notes")
+		self.play = true
+	elseif lane_timer[self.lane] <= 0 and self.play then
+		particlefx.stop("#instrument_notes")
+		self.play = false
+	end
 end
