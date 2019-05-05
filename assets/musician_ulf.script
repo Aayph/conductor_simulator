@@ -2,6 +2,8 @@ function init(self)
 	self.head_rotation = false
 	self.head_position = false
 	self.armR = false
+	self.armR_rotation = false
+	self.armR_x = false
 	self.armL = false
 end
 
@@ -26,9 +28,24 @@ function update(self, dt)
 
 	if self.armR == false and lane_timer[2] > 0 then
 		self.armR = true
-		go.animate("armR", "position.x", go.PLAYBACK_ONCE_PINGPONG, 20, go.EASING_INOUTSINE, 1, 0,
+		go.animate("armR", "position.y", go.PLAYBACK_ONCE_PINGPONG, 6, go.EASING_INOUTSINE, 1, 0,
 		function() 
 			self.armR = false
+		end)		
+	end
+
+	if self.armR_x == false and lane_timer[2] > 0 then
+		self.armR_x = true
+		go.animate("armR", "position.x", go.PLAYBACK_ONCE_PINGPONG, 3, go.EASING_INOUTSINE, 1, 0,
+		function() 
+			self.armR_x = false
+		end)		
+	end
+	if self.armR_rotation == false and lane_timer[2] > 0 then
+		self.armR_rotation = true
+		go.animate("armR", "euler.z", go.PLAYBACK_ONCE_PINGPONG, 7, go.EASING_INOUTSINE, 1, 0,
+		function() 
+			self.armR_rotation = false
 		end)		
 	end
 

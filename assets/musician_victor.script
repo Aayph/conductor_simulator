@@ -27,7 +27,7 @@ function update(self, dt)
 
 	if self.armR == false and lane_timer[3] > 0 then
 		self.armR = true
-		go.animate("armR", "position.x", go.PLAYBACK_ONCE_PINGPONG, -30, go.EASING_INOUTSINE, 7, 0,
+		go.animate("armR", "euler.z", go.PLAYBACK_ONCE_PINGPONG, -30, go.EASING_INOUTSINE, 7, 0,
 		function() 
 			self.armR = false
 		end)		

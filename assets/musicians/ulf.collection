@@ -65,7 +65,7 @@ embedded_instances {
   data: ""
   position {
     x: 64.0
-    y: 84.0
+    y: 104.0
     z: 0.1
   }
   rotation {
@@ -85,15 +85,15 @@ embedded_instances {
   children: "armR"
   data: ""
   position {
-    x: -118.0
-    y: 46.0
+    x: -116.0
+    y: 72.0
     z: 0.1
   }
   rotation {
     x: 0.0
     y: 0.0
-    z: -0.23696373
-    w: 0.9715185
+    z: -0.23696531
+    w: 0.9715181
   }
   scale3 {
     x: 1.0

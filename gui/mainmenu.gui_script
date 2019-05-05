@@ -27,7 +27,7 @@ function update(self, dt)
 		gui.animate(self.score_bar, "size.y", 0, gui.EASING_INCUBIC, 1)
 		gui.animate(self.time_bar, "size.y", 0, gui.EASING_INCUBIC, 1)	
 		main_menu_state = 0
-	elseif main_menu_state == 1 and level_play == 1 then
+	elseif main_menu_state == 1 then
 		if self.last_score ~= get_relative_score() then
 			self.last_score = get_relative_score()
 			gui.animate(self.score_bar, "size.y", self.last_score * 1000, gui.EASING_INCUBIC, 0.5)
@@ -63,8 +63,8 @@ function on_input(self, action_id, action)
 			gui.animate(self.button_end, "position.x", -2000, gui.EASING_INCUBIC, 0)
 			gui.animate(self.score_bar, "size.y", 500, gui.EASING_INCUBIC, 1)
 			gui.animate(self.time_bar, "size.y", 0, gui.EASING_INCUBIC, 0)
-			gui.animate(self.button1, "position.x", -800, gui.EASING_INCUBIC, 1)
-			gui.animate(self.button2, "position.x", 1800, gui.EASING_INCUBIC, 1)
+			gui.animate(self.button1, "position.x", -2000, gui.EASING_INCUBIC, 1)
+			gui.animate(self.button2, "position.x", 3080, gui.EASING_INCUBIC, 1)
 			gui.animate(self.the_curtain, "position.y", 1000, gui.EASING_INCUBIC, 1, 0,on_startlevel2)
 			msg.post("/sound#sound_handler", "play_button")	
 		end

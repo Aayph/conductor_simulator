@@ -16,6 +16,18 @@ images {
 images {
   image: "/gui/bar.png"
 }
+images {
+  image: "/gui/score_bar.png"
+}
+images {
+  image: "/gui/marker.png"
+}
+images {
+  image: "/gui/time_bar.png"
+}
+images {
+  image: "/gui/marker_small.png"
+}
 margin: 0
 extrude_borders: 0
 inner_padding: 0
